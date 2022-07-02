@@ -4,6 +4,7 @@ import {
   getCreation,
   getCreations,
   deleteCreation,
+  updateCreation,
 } from "../controllers/creations.js";
 import { verifyToken } from "../utils/verifyToken.js";
 
@@ -11,6 +12,9 @@ const router = express.Router();
 
 // CREATE
 router.post("/", newCreation);
+
+// PUT
+router.put("/:id", updateCreation);
 
 // GET ALL
 router.get("/", getCreations, verifyToken);

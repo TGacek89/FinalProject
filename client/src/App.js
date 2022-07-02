@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Single from "./components/Get/Single";
-import Settings from "./components/User settings/Settings";
+
+// import SettingsCreate from "./components/User settings/SettingsCreate";
 import Upload from "./pages/create/Upload";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Settings from "./pages/Settings/Settings";
 
 function App() {
   return (
