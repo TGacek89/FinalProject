@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Single from "./components/dupsztal/single";
+import Single from "./components/Get/Single";
 import Settings from "./components/User settings/Settings";
 import Upload from "./pages/create/Upload";
 import Home from "./pages/home/Home";

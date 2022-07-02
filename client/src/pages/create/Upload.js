@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Create from "../../components/Create";
-import CreateForm from "../../components/CreateForm";
+import Create from "../../components/Create/Create";
+import CreateForm from "../../components/CreateForm/CreateForm";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 

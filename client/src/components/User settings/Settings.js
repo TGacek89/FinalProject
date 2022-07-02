@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import FileInput from "../FileInput";
-import styles from "../../components/SongForm/styles.module.css";
+import styles from "./userSettings.css";
 
 const SongForm = () => {
   const [data, setData] = useState({

@@ -1,8 +1,8 @@
-import Get from "../../components/dupsztal/dupsztal";
+import Get from "../../components/Get/Get";
+import Footer from "../../components/Footer/Footer";
 
 import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
-// import Posts from "../../components/posts/posts";
 
 import "./home.css";
 
@@ -12,6 +12,7 @@ export default function Home() {
       <Navbar />
       <Header />
       <Get />
+      <Footer />
     </div>
   );
 }

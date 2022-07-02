@@ -1,13 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import FileInput from "../FileInput";
-import styles from "./styles.module.css";
+import styles from "./createForm.css";
 
-const SongForm = () => {
+const CreateForm = () => {
   const [data, setData] = useState({
     name: "",
     artist: "",
-
     img: "",
   });
 
@@ -36,16 +35,18 @@ const SongForm = () => {
         <h1 className={styles.heading}>Song Form</h1>
         <input
           type="text"
+          maxLength="20"
           className={styles.input}
-          placeholder="Song Name"
+          placeholder="Creation Name...max 20 charactters."
           name="name"
           onChange={handleChange}
           value={data.name}
         />
         <input
           type="text"
+          maxLength="20"
           className={styles.input}
-          placeholder="Artist Name"
+          placeholder="Creator Name...max 20 charactters."
           name="artist"
           onChange={handleChange}
           value={data.artist}
@@ -58,7 +59,13 @@ const SongForm = () => {
           value={data.img}
         />
 
-        <button type="submit" className={styles.submit_btn}>
+        <button
+          type="submit"
+          className={styles.submit_btn}
+          onClick={() => {
+            window.location.reload(false);
+          }}
+        >
           Submit
         </button>
       </form>
@@ -66,4 +73,4 @@ const SongForm = () => {
   );
 };
 
-export default SongForm;
+export default CreateForm;
