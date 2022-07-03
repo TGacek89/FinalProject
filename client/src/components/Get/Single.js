@@ -8,7 +8,7 @@ const Single = (_) => {
   const [create, setCreate] = useState([]);
   const [name, setName] = useState("");
   const [artist, setArtist] = useState("");
-  const [selectedFile, setSelectedFile] = useState();
+  const [profile, setProfile] = useState("");
 
   let { id } = useParams();
   //GET ONE
@@ -29,7 +29,7 @@ const Single = (_) => {
 
   //UPDATE
 
-  function updateUser() {
+  function updateCreation() {
     let item = { name, artist };
     console.warn("item", item);
     fetch(process.env.REACT_APP_API_URL + `/creation/${id}`, {
@@ -53,6 +53,21 @@ const Single = (_) => {
       alert("Post deleted!");
     });
   }
+  //UPDATE PHOTO
+  const handleChange = (e) => {
+    console.log(e.target.files);
+    setProfile(e.target.files[0]);
+  };
+
+  const handleApi = () => {
+    const formData = new FormData();
+    formData.append("profile", profile);
+    axios
+      .put(process.env.REACT_APP_API_URL + `/creation/${id}`, formData)
+      .then((res) => {
+        console.log(res);
+      });
+  };
 
   return (
     <div>
@@ -82,7 +97,12 @@ const Single = (_) => {
         />{" "}
         <br />
         <br />
-        <button onClick={updateUser}>Update User</button>
+        <button onClick={updateCreation}>Update </button>
+      </div>
+      <div>
+        User image upload
+        <input type="file" onChange={handleChange} />
+        <button onClick={handleApi}>Submit</button>
       </div>
     </div>
   );
