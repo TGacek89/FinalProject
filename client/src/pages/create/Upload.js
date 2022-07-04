@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Create from "../../components/Create/Create";
 import CreateForm from "../../components/CreateForm/CreateForm";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/header/Header";
 import "./upload.css";
 

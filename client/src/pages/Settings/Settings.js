@@ -3,7 +3,7 @@ import axios from "axios";
 import "./settings.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 function Settings() {
   const { user } = useContext(AuthContext);

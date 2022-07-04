@@ -30,7 +30,7 @@ const CreateForm = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.heading}>Create</h1>
         <input

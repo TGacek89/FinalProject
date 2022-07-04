@@ -1,7 +1,7 @@
 import Get from "../../components/Get/Get";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/header/Header";
-import Menu from "../../components/Menu/Menu";
+import Menu from "../../components/Navbar/Navbar";
 import "./home.css";
 
 export default function Home() {
@@ -9,7 +9,6 @@ export default function Home() {
     <div>
       <Menu />
       <Header />
-
       <div className="home">
         <Get />
       </div>

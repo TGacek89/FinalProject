@@ -64,12 +64,32 @@ const Footer = () => {
               projects.
             </h2>
           </div>
-          <form ref={formRef} onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name" name="user_name" />
-            <input type="text" placeholder="Subject" name="user_subject" />
-            <input type="text" placeholder="Email" name="user_email" />
-            <textarea rows="5" placeholder="Message" name="message" />
-            <button>Submit</button>
+          <form className="footerform" ref={formRef} onSubmit={handleSubmit}>
+            <input
+              className="footerinput"
+              type="text"
+              placeholder="Name"
+              name="user_name"
+            />
+            <input
+              className="footerinput"
+              type="text"
+              placeholder="Subject"
+              name="user_subject"
+            />
+            <input
+              className="footerinput"
+              type="text"
+              placeholder="Email"
+              name="user_email"
+            />
+            <textarea
+              className="footertextarea"
+              rows="5"
+              placeholder="Message"
+              name="message"
+            />
+            <button className="footerbutton">Submit</button>
             {done && "Thanks!"}
           </form>
         </div>
