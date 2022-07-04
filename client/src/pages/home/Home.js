@@ -11,7 +11,10 @@ export default function Home() {
     <div>
       <Navbar />
       <Header />
-      <Get />
+
+      <div className="home">
+        <Get />
+      </div>
       <Footer />
     </div>
   );

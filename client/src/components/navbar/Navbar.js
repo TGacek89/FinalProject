@@ -16,9 +16,30 @@ const Navbar = () => {
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
           <span className="logo">FINAL PROJECT</span>
         </Link>
+        <Link to="/create" style={{ color: "inherit", textDecoration: "none" }}>
+          <button className="navButton">ADD PHOTOS</button>
+        </Link>
+        <Link
+          to="/register"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          <button className="navButton">Register</button>
+        </Link>
+        <Link
+          to="/register"
+          style={{ color: "inherit", textDecoration: "none" }}
+        >
+          <button className="navButton">Register</button>
+        </Link>
         {user ? (
           <div>
-            <p>Welcome! {user.username}</p>
+            <Link
+              to="/settings"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              <p>Welcome! {user.username}</p>
+            </Link>
+
             <span onClick={() => dispatch(logout())}>Logout </span>
           </div>
         ) : (

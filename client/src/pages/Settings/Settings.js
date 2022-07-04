@@ -13,7 +13,7 @@ function Settings() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const PF = "http://localhost:8800/api/users/" + user._id;
+  const PF = process.env.REACT_APP_API_URL + "/users/" + user._id;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ function Settings() {
 
     try {
       const res = await axios.put(
-        "http://localhost:8800/api/users/" + user._id,
+        process.env.REACT_APP_API_URL + "/users/" + user._id,
         updatedUser
       );
       setSuccess(true);

@@ -4,6 +4,7 @@ import Create from "../../components/Create/Create";
 import CreateForm from "../../components/CreateForm/CreateForm";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
+import "./upload.css";
 
 function Upload() {
   const [create, setCreate] = useState([]);
@@ -23,15 +24,16 @@ function Upload() {
     getAllCreations();
   }, []);
   return (
-    <div className="container">
+    <div className="main">
       <Navbar />
       <Header />
-      <CreateForm />
-
-      <div className="songs_container">
-        {create.map((create) => (
-          <Create create={create} key={create._id} />
-        ))}
+      <div className="container">
+        <div className="songs_container">
+          <CreateForm />
+          {create.map((create) => (
+            <Create create={create} key={create._id} />
+          ))}
+        </div>
       </div>
     </div>
   );

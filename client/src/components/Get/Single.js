@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Header from "../header/Header";
+import "./single.css";
 
 const Single = (_) => {
   const [create, setCreate] = useState([]);
@@ -73,36 +74,35 @@ const Single = (_) => {
     <div>
       <Navbar />
       <Header />
+      <div className="container">
+        {create.name}
+        <img src={create.img} alt="" className="fpImg" />
+        <div>
+          <button onClick={deletePost}> DELETE</button>
 
-      {create.name}
-      <img src={create.img} alt="" className="fpImg" />
-      <button onClick={deletePost}> DELETE</button>
-
-      <div>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />{" "}
-        <br />
-        <br />
-        <input
-          type="text"
-          value={artist}
-          onChange={(e) => {
-            setArtist(e.target.value);
-          }}
-        />{" "}
-        <br />
-        <br />
-        <button onClick={updateCreation}>Update </button>
-      </div>
-      <div>
-        User image upload
-        <input type="file" onChange={handleChange} />
-        <button onClick={handleApi}>Submit</button>
+          <div>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />{" "}
+            <input
+              type="text"
+              value={artist}
+              onChange={(e) => {
+                setArtist(e.target.value);
+              }}
+            />{" "}
+            <button onClick={updateCreation}>Update </button>
+          </div>
+          <div>
+            Image update
+            <input type="file" onChange={handleChange} />
+            <button onClick={handleApi}>Submit</button>
+          </div>
+        </div>
       </div>
     </div>
   );

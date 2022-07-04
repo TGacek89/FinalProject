@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./get.css";
 
 function Get() {
   const [create, setCreate] = useState([]);
@@ -21,16 +22,14 @@ function Get() {
   }, []);
   return (
     <div className="container">
-      <div className="songs_container">
-        {create.map((create) => (
-          <div>
-            <Link to={`/creation/${create._id}`} className="link">
-              <span className="postTitle">{create.name}</span>
-              <img src={create.img} alt="" className="fpImg" />
-            </Link>
-          </div>
-        ))}
-      </div>
+      {create.map((create) => (
+        <div className="container.img">
+          <Link to={`/creation/${create._id}`} className="link">
+            <span className="postTitle">{create.name}</span>
+            <img src={create.img} alt="" className="fpImg" />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
