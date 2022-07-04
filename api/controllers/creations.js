@@ -40,13 +40,7 @@ export const updateCreation = async (req, res) => {
 export const deleteCreation = async (req, res) => {
   try {
     const create = await Creation.findByIdAndDelete(req.params.id);
-
-    try {
-      await post.delete();
-      res.status(200).json("Post has been deleted...");
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    res.status(200).json("Post has been deleted...");
   } catch (err) {
     res.status(500).json(err);
   }

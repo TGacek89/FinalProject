@@ -151,6 +151,7 @@
     font-size: 20px;
     font-weight: 300;
     padding: 20px;
+    margin-top: -500px;
   }
 
   .i-name {
@@ -174,10 +175,12 @@
   }
   .i-left-wrapper {
     padding: 10px;
+    margin-top: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
     height: 100%;
+    color: aqua;
   }
   .i-desc {
     display: none;

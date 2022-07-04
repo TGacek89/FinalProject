@@ -22,8 +22,8 @@ function Get() {
   }, []);
   return (
     <div className="container">
-      {create.map((create) => (
-        <div className="container.img">
+      {create.map((create, index) => (
+        <div className="container.img" key={index}>
           <Link to={`/creation/${create._id}`} className="link">
             <span className="postTitle">{create.name}</span>
             <img src={create.img} alt="" className="fpImg" />

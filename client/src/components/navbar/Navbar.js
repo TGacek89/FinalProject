@@ -16,9 +16,7 @@ const Navbar = () => {
         <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
           <span className="logo">FINAL PROJECT</span>
         </Link>
-        <Link to="/create" style={{ color: "inherit", textDecoration: "none" }}>
-          <button className="navButton">ADD PHOTOS</button>
-        </Link>
+
         <Link
           to="/register"
           style={{ color: "inherit", textDecoration: "none" }}
@@ -41,6 +39,13 @@ const Navbar = () => {
             </Link>
 
             <span onClick={() => dispatch(logout())}>Logout </span>
+
+            <Link
+              to="/create"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              <button className="navButton">ADD PHOTOS</button>
+            </Link>
           </div>
         ) : (
           <div className="navItems">

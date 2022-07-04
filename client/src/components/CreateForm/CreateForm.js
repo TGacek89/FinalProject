@@ -32,7 +32,7 @@ const CreateForm = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.heading}>Song Form</h1>
+        <h1 className={styles.heading}>Create</h1>
         <input
           type="text"
           maxLength="20"

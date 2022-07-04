@@ -1,10 +1,12 @@
 .settings {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .settingsWrapper {
-  flex: 9;
   padding: 20px;
+  width: 50vw;
 }
 
 .settingsTitle {

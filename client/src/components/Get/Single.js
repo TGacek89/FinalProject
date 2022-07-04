@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Header from "../header/Header";
 import "./single.css";
 
 const Single = (_) => {
   const [create, setCreate] = useState([]);
+  const [deleted, setDeleted] = useState(false);
   const [name, setName] = useState("");
   const [artist, setArtist] = useState("");
   const [profile, setProfile] = useState("");
@@ -27,7 +28,7 @@ const Single = (_) => {
   useEffect(() => {
     getAllCreations();
   });
-
+  useEffect(() => {}, [deleted, create]);
   //UPDATE
 
   function updateCreation() {
@@ -40,19 +41,24 @@ const Single = (_) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(item),
-    }).then((result) => {
-      result.json().then((resp) => {
-        console.warn(resp);
-        getAllCreations();
-      });
-    });
+    })
+      .then((result) => {
+        result.json();
+      })
+      .then()
+      .catch((err) => {});
   }
 
   //DELETE POST
   function deletePost() {
-    axios.delete(process.env.REACT_APP_API_URL + `/creation/${id}`).then(() => {
-      alert("Post deleted!");
-    });
+    axios
+      .delete(process.env.REACT_APP_API_URL + `/creation/${id}`)
+      .then((res) => {
+        // alert("Post deleted!");
+        setDeleted(true);
+        if (res.statusText === "OK") {
+        }
+      });
   }
   //UPDATE PHOTO
   const handleChange = (e) => {
@@ -78,6 +84,9 @@ const Single = (_) => {
         {create.name}
         <img src={create.img} alt="" className="fpImg" />
         <div>
+          <div>
+            <img src={create.img} alt="" className="fpImg" />
+          </div>
           <button onClick={deletePost}> DELETE</button>
 
           <div>
@@ -103,6 +112,7 @@ const Single = (_) => {
             <button onClick={handleApi}>Submit</button>
           </div>
         </div>
+        {deleted && <Navigate to="/create" replace={true} />}
       </div>
     </div>
   );

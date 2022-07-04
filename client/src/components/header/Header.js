@@ -19,9 +19,8 @@ export default function Header() {
       </div>
       <div className="i-left">
         <div className="i-left-wrapper">
-          <h2 className="i-intro">Hello, My name is</h2>
-          <h1 className="i-name">Tomasz Gacek</h1>
-          <div className="i-title"></div>
+          <h2 className="i-intro">Welcome to</h2>
+          <h1 className="i-name">Foto upload</h1>
         </div>
       </div>
     </div>

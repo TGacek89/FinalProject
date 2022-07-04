@@ -1,15 +1,13 @@
 import Get from "../../components/Get/Get";
 import Footer from "../../components/Footer/Footer";
-
 import Header from "../../components/header/Header";
-import Navbar from "../../components/navbar/Navbar";
-
+import Menu from "../../components/Menu/Menu";
 import "./home.css";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      <Menu />
       <Header />
 
       <div className="home">
