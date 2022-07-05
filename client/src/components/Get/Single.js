@@ -7,6 +7,7 @@ import "./single.css";
 import Footer from "../Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const Single = (_) => {
   const [create, setCreate] = useState([]);
@@ -82,38 +83,46 @@ const Single = (_) => {
   return (
     <div>
       <Navbar />
-      <Header />
+      {/* <Header /> */}
       <div className="single-container">
-        {create.name}
+        <div className="single-title">{create.name}</div>
+        <div className="single-artist">{create.artist}</div>
         <div>
-          <div className="single-img">
-            <img className="single-img" src={create.img} alt="" />
-          </div>
+          <img className="single-img" src={create.img} alt="" />
+        </div>
 
-          <button onClick={deletePost}> DELETE</button>
-          <FontAwesomeIcon icon={faTrash} onClick={deletePost} />
-
+        <div className="single-form">
+          <FontAwesomeIcon
+            icon={faTrash}
+            size="2x"
+            className="single-trash"
+            onClick={deletePost}
+          />
+          <FontAwesomeIcon
+            icon={faPen}
+            size="2x"
+            className="single-update"
+            onClick={deletePost}
+          />
+          {/* <input
+            type="text"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />{" "}
+          <input
+            type="text"
+            value={artist}
+            onChange={(e) => {
+              setArtist(e.target.value);
+            }}
+          />{" "} */}
+          {/* <button onClick={updateCreation}>Update </button> */}
           <div>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-            />{" "}
-            <input
-              type="text"
-              value={artist}
-              onChange={(e) => {
-                setArtist(e.target.value);
-              }}
-            />{" "}
-            <button onClick={updateCreation}>Update </button>
-          </div>
-          <div>
-            Image update
+            {/* Image update
             <input type="file" onChange={handleChange} />
-            <button onClick={handleApi}>Submit</button>
+            <button onClick={handleApi}>Submit</button> */}
           </div>
         </div>
         {deleted && <Navigate to="/create" replace={true} />}

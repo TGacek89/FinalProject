@@ -28,8 +28,13 @@ function Get() {
             <div className="get-img">
               <img src={create.img} alt="" className="fpImg" />
               <div className="get-name">
-                <span className="postTitle">{create.name}</span>
-                <span className="postTitle">{create.artist}</span>
+                <span className="creationName">{create.name}</span>
+                <span className="creationDate">
+                  {new Date(create.createdAt).toDateString()}
+                </span>
+                <div className="creationArtist">
+                  <span>{create.artist}</span>
+                </div>
               </div>
             </div>
           </Link>

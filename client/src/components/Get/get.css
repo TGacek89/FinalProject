@@ -9,21 +9,52 @@
 /* .get-container-img {
   display: flex;
   flex-direction: column;
+  width: 645px;
+  height: 365px;
+  background-color: white;
 } */
 
 .fpImg {
   margin-top: 50px;
-  width: 400px;
-  height: 300px;
+  padding: 16px;
+  width: 640px;
+  height: 360px;
 }
 
 .get-name {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  background-color: white;
+  text-decoration: none;
 }
 
-.postTitle {
-  color: white;
+.get-img {
+  background-color: white;
+  margin: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.creationDate {
+  color: rgba(21, 21, 21, 0.502);
+  font-weight: 400;
+  font-size: 16px;
+  margin: 16px;
+}
+
+.creationName {
+  color: rgb(21, 21, 21);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.creationArtist {
+  text-align: left;
+  font-size: 16px;
+  color: rgb(21, 21, 21);
+  margin-bottom: 16px;
 }

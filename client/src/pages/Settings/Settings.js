@@ -14,6 +14,10 @@ function Settings() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
+  const [file, setFile] = useState(null);
+
+  const PF = "http://localhost:8800/api/users/" + user._id;
+
   useEffect(() => {}, [success, error]);
 
   const handleSubmit = async (e) => {
@@ -65,6 +69,22 @@ function Settings() {
             </span>
           </div>
           <form className="settingsForm" onSubmit={handleSubmit}>
+            <label>Profile Picture</label>
+            <div className="settingsPP">
+              <img
+                src={file ? URL.createObjectURL(file) : PF + user.profilePic}
+                alt=""
+              />
+              <label htmlFor="fileInput">
+                <i className="settingsPPIcon far fa-user-circle"></i>
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                style={{ display: "none" }}
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </div>
             <label>Username</label>
             <input
               type="text"

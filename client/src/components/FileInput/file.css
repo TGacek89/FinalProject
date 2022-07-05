@@ -1,8 +1,7 @@
 .file-container {
-  width: 80vw;
-  height: 40vh;
+  width: 20vw;
+  height: 30vh;
   border: none;
-
   padding: 10px 5px;
   margin: 5px 0;
   display: flex;
@@ -20,7 +19,6 @@
   font-weight: bold;
   background: transparent;
   padding: 10px;
-  border: 1px solid black;
   border-radius: 2px;
   cursor: pointer;
 }

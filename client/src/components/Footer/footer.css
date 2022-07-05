@@ -211,7 +211,7 @@ a {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 720px) {
   .c-wrapper {
     flex-direction: column;
     padding: 0px 50px;
@@ -265,8 +265,6 @@ a {
     height: 80%;
     position: absolute;
     top: 0;
-
-    animation: go 5s ease-in-out infinite alternate;
   }
   @keyframes go {
     25% {
