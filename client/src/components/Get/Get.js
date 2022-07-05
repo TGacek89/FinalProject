@@ -21,12 +21,17 @@ function Get() {
     getAllCreations();
   }, []);
   return (
-    <div className="container">
+    <div className="get-container">
       {create.map((create, index) => (
-        <div className="container.img" key={index}>
+        <div className="get-container.img" key={index}>
           <Link to={`/creation/${create._id}`} className="link">
-            <span className="postTitle">{create.name}</span>
-            <img src={create.img} alt="" className="fpImg" />
+            <div className="get-img">
+              <img src={create.img} alt="" className="fpImg" />
+              <div className="get-name">
+                <span className="postTitle">{create.name}</span>
+                <span className="postTitle">{create.artist}</span>
+              </div>
+            </div>
           </Link>
         </div>
       ))}

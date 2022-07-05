@@ -1,7 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import FileInput from "../FileInput";
-import styles from "./createForm.css";
+import "./createForm.css";
+import Footer from "../Footer/Footer";
+import Header from "../header/Header";
+import Navbar from "../Navbar/Navbar";
 
 const CreateForm = () => {
   const [data, setData] = useState({
@@ -30,45 +33,51 @@ const CreateForm = () => {
   };
 
   return (
-    <div className="container">
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.heading}>Create</h1>
-        <input
-          type="text"
-          maxLength="20"
-          className={styles.input}
-          placeholder="Creation Name...max 20 charactters."
-          name="name"
-          onChange={handleChange}
-          value={data.name}
-        />
-        <input
-          type="text"
-          maxLength="20"
-          className={styles.input}
-          placeholder="Creator Name...max 20 charactters."
-          name="artist"
-          onChange={handleChange}
-          value={data.artist}
-        />
-        <FileInput
-          name="img"
-          label="Choose Image"
-          handleInputState={handleInputState}
-          type="image"
-          value={data.img}
-        />
+    <div>
+      <Navbar />
+      <Header />
+      <div className="form-container">
+        <form className="form" onSubmit={handleSubmit}>
+          <h1 className="heading">Create</h1>
 
-        <button
-          type="submit"
-          className={styles.submit_btn}
-          onClick={() => {
-            window.location.reload(false);
-          }}
-        >
-          Submit
-        </button>
-      </form>
+          <FileInput
+            name="img"
+            label="Choose Image"
+            handleInputState={handleInputState}
+            type="image"
+            value={data.img}
+          />
+          <input
+            type="text"
+            maxLength="20"
+            className="styles.input"
+            placeholder="Creation Name...max 20 charactters."
+            name="name"
+            onChange={handleChange}
+            value={data.name}
+          />
+          <input
+            type="text"
+            maxLength="20"
+            className="styles.input"
+            placeholder="Creator Name...max 20 charactters."
+            name="artist"
+            onChange={handleChange}
+            value={data.artist}
+          />
+
+          <button
+            type="submit"
+            className="styles.submit_btn"
+            onClick={() => {
+              window.location.reload(false);
+            }}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 };

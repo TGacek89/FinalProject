@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Header from "../header/Header";
 import "./single.css";
+import Footer from "../Footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Single = (_) => {
   const [create, setCreate] = useState([]);
@@ -80,14 +83,15 @@ const Single = (_) => {
     <div>
       <Navbar />
       <Header />
-      <div className="container">
+      <div className="single-container">
         {create.name}
-        <img src={create.img} alt="" className="fpImg" />
         <div>
-          <div>
-            <img src={create.img} alt="" className="fpImg" />
+          <div className="single-img">
+            <img className="single-img" src={create.img} alt="" />
           </div>
+
           <button onClick={deletePost}> DELETE</button>
+          <FontAwesomeIcon icon={faTrash} onClick={deletePost} />
 
           <div>
             <input
@@ -114,6 +118,7 @@ const Single = (_) => {
         </div>
         {deleted && <Navigate to="/create" replace={true} />}
       </div>
+      <Footer />
     </div>
   );
 };

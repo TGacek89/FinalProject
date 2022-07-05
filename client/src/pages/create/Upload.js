@@ -24,15 +24,17 @@ function Upload() {
     getAllCreations();
   }, []);
   return (
-    <div className="main">
+    <div>
       <Navbar />
       <Header />
-      <div className="container">
-        <div className="songs_container">
-          <CreateForm />
-          {create.map((create) => (
+      <div className="main">
+        <div className="container">
+          <div className="songs_container">
+            <CreateForm />
+            {/* {create.map((create) => (
             <Create create={create} key={create._id} />
-          ))}
+          ))} */}
+          </div>
         </div>
       </div>
     </div>

@@ -32,31 +32,40 @@ const Login = () => {
   };
 
   return (
-    <div className="main">
-      <div className="overlay"></div>
-      <video src={videoBg} autoPlay loop muted />
-      <div className="content">
-        <h1>LOGIN</h1>
+    <div className="l">
+      <div className="l-left">
+        <div className="main">
+          <video src={videoBg} autoPlay loop muted />
+        </div>
 
-        <div className="lContainer">
-          <input
-            type="text"
-            placeholder="username"
-            id="username"
-            onChange={handleChange}
-            className="lInput"
-          />
-          <input
-            type="password"
-            placeholder="password"
-            id="password"
-            onChange={handleChange}
-            className="lInput"
-          />
-          <button disabled={loading} onClick={handleClick} className="lButton">
-            Login
-          </button>
-          {error && <span>{error.message}</span>}
+        <div className="l.right">
+          <div className="lContainer">
+            <h1 className="i-title"> LOGIN</h1>
+            <label className="top-text">Username</label>
+            <input
+              type="text"
+              placeholder="Enter your username..."
+              id="username"
+              onChange={handleChange}
+              className="lInput"
+            />
+            <label className="top-text">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password..."
+              id="password"
+              onChange={handleChange}
+              className="lInput"
+            />
+            <button
+              disabled={loading}
+              onClick={handleClick}
+              className="lButton"
+            >
+              Login
+            </button>
+            {error && <span>{error.message}</span>}
+          </div>
         </div>
       </div>
     </div>

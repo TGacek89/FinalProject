@@ -1,6 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+video {
+  width: 60vw;
+  height: 80vh;
+  object-fit: cover;
+}
+
 .i {
   display: flex;
-  height: 60vh;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 35%
+  );
 }
 
 .i-left {
@@ -8,18 +29,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(21, 21, 21);
 }
 
 .i-right {
   flex: 1;
   position: relative;
-  background-color: rgb(21, 21, 21);
 }
 
 .i-left-wrapper {
   padding: 50px;
-  height: 50%;
+
+  /* height: 50%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,7 +54,6 @@
 .i-name {
   font-size: 90px;
   font-weight: 900;
-  margin-top: -500px;
 }
 
 .i-title {
@@ -44,6 +63,8 @@
 
 .i-title-wrapper {
   height: 100%;
+  font-size: 50px;
+  padding: 50px;
   animation: move 10s ease-in-out infinite alternate;
 }
 

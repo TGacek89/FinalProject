@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import storage from "../../firebase";
 import check from "../../check.png";
-import styles from "./styles.module.css";
+import "./file.css";
 
 const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
   const inputRef = useRef();
@@ -35,44 +35,44 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="file-container">
+      {type === "image" && value && (
+        <img
+          src={typeof value === "string" ? value : URL.createObjectURL(value)}
+          alt="file"
+          className="file-preview-img"
+        />
+      )}
       <input
         type="file"
         ref={inputRef}
         accept="image/png, image/gif, image/jpeg"
         onChange={(e) => handleInputState(name, e.currentTarget.files[0])}
         vlaue={value}
-        className={styles.input}
+        className="input"
         {...rest}
       />
       <button
-        type="button"
+        type="file-button"
         onClick={() => inputRef.current.click()}
-        className={styles.button}
+        className="button"
       >
         {label}
       </button>
-      {type === "image" && value && (
-        <img
-          src={typeof value === "string" ? value : URL.createObjectURL(value)}
-          alt="file"
-          className={styles.preview_img}
-        />
-      )}
 
       {value !== null && !progressShow && typeof value !== "string" && (
-        <button onClick={handleUpload} className={styles.button}>
+        <button onClick={handleUpload} className="button">
           Upload
         </button>
       )}
       {progressShow && progress < 100 && (
-        <div className={styles.progress_container}>
+        <div className="file-progress-container">
           <p>{progress}%</p>
         </div>
       )}
       {progress === 100 && (
-        <div className={styles.progress_container}>
-          <img src={check} alt="check circle" className={styles.check_img} />
+        <div className="file-progress-container">
+          <img src={check} alt="check circle" className="check-img" />
         </div>
       )}
     </div>

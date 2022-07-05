@@ -1,11 +1,29 @@
-.container {
-  flex: 3;
+.get-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 50px;
+
+  justify-content: space-around;
+  align-items: center;
 }
-/* 
-.container.img {
-  width: 300px;
-  background-color: aliceblue;
+
+/* .get-container-img {
+  display: flex;
+  flex-direction: column;
 } */
+
+.fpImg {
+  margin-top: 50px;
+  width: 400px;
+  height: 300px;
+}
+
+.get-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.postTitle {
+  color: white;
+}

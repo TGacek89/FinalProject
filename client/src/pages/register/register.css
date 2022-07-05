@@ -59,7 +59,7 @@ video {
   width: 20vw;
   padding: 10px;
   margin: 20px;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .registerLoginButton {
@@ -68,8 +68,12 @@ video {
   right: 20px;
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 35%
+  );
+  color: rgb(0, 0, 0);
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -78,8 +82,12 @@ video {
 .registerButton {
   border: none;
   padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 35%
+  );
+  color: rgb(0, 0, 0);
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -93,4 +101,8 @@ video {
   background-color: rgba(0, 0, 0, 0.426);
   width: 40vw;
   height: 60vh;
+}
+
+.top-text {
+  font-size: 24px;
 }
