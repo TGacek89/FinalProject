@@ -83,6 +83,7 @@ const Single = (_) => {
   return (
     <div>
       <Navbar />
+      <Header />
       {/* <Header /> */}
       <div className="single-container">
         <div className="single-title">{create.name}</div>

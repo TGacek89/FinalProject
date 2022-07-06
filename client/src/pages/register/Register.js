@@ -31,42 +31,44 @@ export default function Register() {
 
       <div className="content">
         <h1>REGISTER</h1>
-        <form className="registerForm" onSubmit={handleSubmit}>
-          <label className="top-text">Username</label>
-          <input
-            type="text"
-            className="registerInput"
-            placeholder="Enter your username..."
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label className="top-text">Email</label>
-          <input
-            type="text"
-            className="registerInput"
-            placeholder="Enter your email..."
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label className="top-text">Password</label>
-          <input
-            type="password"
-            className="registerInput"
-            placeholder="Enter your password..."
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button className="registerButton" type="submit">
-            Register
+        <div className="register-Container">
+          <form className="registerForm" onSubmit={handleSubmit}>
+            <label className="top-text">Username</label>
+            <input
+              type="text"
+              className="registerInput"
+              placeholder="Enter your username..."
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label className="top-text">Email</label>
+            <input
+              type="text"
+              className="registerInput"
+              placeholder="Enter your email..."
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label className="top-text">Password</label>
+            <input
+              type="password"
+              className="registerInput"
+              placeholder="Enter your password..."
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button className="registerButton" type="submit">
+              Register
+            </button>
+          </form>
+          <button className="registerLoginButton">
+            <Link className="link" to="/login">
+              Login
+            </Link>
           </button>
-        </form>
-        <button className="registerLoginButton">
-          <Link className="link" to="/login">
-            Login
-          </Link>
-        </button>
-        {error && (
-          <span style={{ color: "red", marginTop: "10px" }}>
-            Something went wrong!
-          </span>
-        )}
+          {error && (
+            <span style={{ color: "red", marginTop: "10px" }}>
+              Something went wrong!
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
