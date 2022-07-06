@@ -36,8 +36,9 @@ export default function Navbar() {
           <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
             <li className="items">Home</li>
           </Link>
-
-          <li className="items">Contact</li>
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <li className="items">Contact</li>
+          </Link>
           {user ? (
             <ul className="list">
               <li className="items" onClick={() => dispatch(logout())}>

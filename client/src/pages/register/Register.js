@@ -28,6 +28,7 @@ export default function Register() {
     <div className="main">
       <div className="overlay"></div>
       <video src={videoBg} autoPlay loop muted />
+
       <div className="content">
         <h1>REGISTER</h1>
         <form className="registerForm" onSubmit={handleSubmit}>
