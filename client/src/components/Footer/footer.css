@@ -136,11 +136,11 @@ a {
   .c-wrapper {
     flex-direction: column;
     padding: 0px 50px;
+    background-color: rgb(21, 21, 21);
   }
 
   .c-title {
-    font-size: 30px;
-    color: black;
+    display: none;
   }
   .c-info-item {
     margin: 20px 0px;
@@ -211,84 +211,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 720px) {
-  .c-wrapper {
-    flex-direction: column;
-    padding: 0px 50px;
-  }
-
-  .c-title {
-    font-size: 30px;
-    color: black;
-  }
-  .c-info-item {
-    margin: 20px 0px;
-  }
-
-  .c-desc {
-    display: none;
-  }
-
-  .footerform {
-    margin-top: 110px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .footerinput {
-    width: 35%;
-    height: 40px;
-    margin: 10px;
-    margin-left: 0px;
-  }
-  .footerbutton {
-    margin-top: 10px;
-  }
-
-  .c-bg {
-    clip-path: polygon(
-      54% 0,
-      100% 1%,
-      100% 41%,
-      72% 51%,
-      18% 53%,
-      3% 40%,
-      0 1%
-    );
-    background: rgb(255, 145, 0);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 145, 0, 1) 0%,
-      rgba(255, 184, 0, 1) 35%
-    );
-    width: 100%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-  }
-  @keyframes go {
-    25% {
-      transform: translateY(+2px);
-    }
-    50% {
-      transform: translateX(+2px);
-    }
-    75% {
-      transform: translateY(-1px);
-    }
-    100% {
-      transform: translateX(-1px);
-    }
-  }
-  .c-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-    position: relative;
-  }
-}
-
-@media screen and (max-width: 991px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
   .c-wrapper {
     flex-direction: column;
     padding: 0px 50px;
@@ -296,8 +219,7 @@ a {
   }
 
   .c-title {
-    font-size: 25px;
-    color: black;
+    display: none;
   }
   .c-info-item {
     margin: 20px 0px;
@@ -315,12 +237,12 @@ a {
 
   .footerinput {
     width: 35%;
-    height: 40px;
+    height: 30px;
     margin: 10px;
     margin-left: 0px;
   }
   .footerbutton {
-    margin-top: 10px;
+    margin-top: 0px;
   }
 
   .c-bg {
@@ -365,5 +287,32 @@ a {
     height: 30px;
     margin-right: 20px;
     position: relative;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .c-title {
+    font-size: 25px;
+    color: rgb(21, 21, 21);
+    position: relative;
+  }
+
+  .c-desc {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
+  .c-title {
+    font-size: 24px;
+    color: rgb(21, 21, 21);
+    position: relative;
+  }
+
+  .c-desc {
+    font-size: 12px;
+  }
+  .c-info {
+    font-size: 16px;
   }
 }

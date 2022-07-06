@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Create from "../../components/Create/Create";
+
 import CreateForm from "../../components/CreateForm/CreateForm";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/header/Header";
@@ -31,9 +31,6 @@ function Upload() {
         <div className="container">
           <div className="songs_container">
             <CreateForm />
-            {/* {create.map((create) => (
-            <Create create={create} key={create._id} />
-          ))} */}
           </div>
         </div>
       </div>

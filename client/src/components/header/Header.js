@@ -16,7 +16,7 @@ export default function Header() {
           <h1 className="i-name">Photo Blog</h1>
           <div className="i-title">
             <div className="i-title-wrapper">
-              <div className="i-title-item">Junior Full Stack </div>
+              <div className="i-title-item">Junior </div>
               <div className="i-title-item">Student</div>
               <div className="i-title-item">Beautifull</div>
               <div className="i-title-item">Content </div>

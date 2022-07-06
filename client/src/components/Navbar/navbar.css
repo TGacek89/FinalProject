@@ -38,27 +38,54 @@ nav {
   font-size: 18px;
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 480px) {
+  .items {
+    width: 100%;
+    /* border-top: 1px solid rgba(255, 255, 255, 0.555); */
+    background-color: rgba(255, 184, 0, 1);
+    text-align: center;
+    margin-right: 0px;
+    padding: 5px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    position: relative;
+  }
   .list {
     flex-direction: column;
     height: auto;
     background-color: rgba(255, 184, 0, 1);
+    font-size: 12px;
   }
   .items:nth-child(1) {
-    border-top: 1px solid rgba(255, 255, 255, 0.555);
-    margin-top: 50px;
+    margin-top: 16px;
     background-color: rgba(255, 184, 0, 1);
   }
   .items {
     width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.555);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.555); */
     background-color: rgba(255, 184, 0, 1);
     text-align: center;
     margin-right: 0px;
-    padding: 20px 0;
+    padding: 5px 0;
   }
   .btn {
     display: block;
     color: rgb(0, 0, 0);
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .items {
+    margin-right: 20px;
+    font-size: 16px;
+    padding: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(255, 184, 0, 1);
   }
 }

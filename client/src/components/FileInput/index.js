@@ -43,22 +43,22 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
           className="file-preview-img"
         />
       )}
+      <button
+        type="file-button"
+        onClick={() => inputRef.current.click()}
+        className="file-button"
+      >
+        {label}
+      </button>
       <input
         type="file"
         ref={inputRef}
         accept="image/png, image/gif, image/jpeg"
         onChange={(e) => handleInputState(name, e.currentTarget.files[0])}
         vlaue={value}
-        className="input"
+        className="file-input"
         {...rest}
       />
-      <button
-        type="file-button"
-        onClick={() => inputRef.current.click()}
-        className="button"
-      >
-        {label}
-      </button>
 
       {value !== null && !progressShow && typeof value !== "string" && (
         <button onClick={handleUpload} className="button">
@@ -72,7 +72,7 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
       )}
       {progress === 100 && (
         <div className="file-progress-container">
-          <img src={check} alt="check circle" className="check-img" />
+          <img src={check} alt="check circle" className="file-check-img" />
         </div>
       )}
     </div>

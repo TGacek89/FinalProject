@@ -49,22 +49,20 @@ const CreateForm = () => {
               type="image"
               value={data.img}
             />{" "}
-            <h5>Add title</h5>
             <input
               type="text"
               maxLength="20"
-              className="styles.input"
-              placeholder="Creation Name...max 20 charactters."
+              className="create-input-field"
+              placeholder="Creation Name... max 20 charactters."
               name="name"
               onChange={handleChange}
               value={data.name}
             />
-            <h5>Add description</h5>
             <input
               type="text"
               maxLength="20"
-              className="styles.input"
-              placeholder="Creator Name...max 20 charactters."
+              className="create-input-field"
+              placeholder="Description... max 20 charactters."
               name="artist"
               onChange={handleChange}
               value={data.artist}
@@ -75,7 +73,7 @@ const CreateForm = () => {
             {" "}
             <button
               type="submit"
-              className="styles.submit_btn"
+              className="submit-btn"
               onClick={() => {
                 window.location.reload(false);
               }}

@@ -31,17 +31,12 @@ export default function Navbar() {
 
   return (
     <nav>
-      {(toggleMenu || screenWidth > 959) && (
+      {(toggleMenu || screenWidth > 767) && (
         <ul className="list">
           <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
             <li className="items">Home</li>
           </Link>
-          <Link
-            to="/register"
-            style={{ color: "inherit", textDecoration: "none" }}
-          >
-            <li className="items">Services</li>
-          </Link>
+
           <li className="items">Contact</li>
           {user ? (
             <ul className="list">
