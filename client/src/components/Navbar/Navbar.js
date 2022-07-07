@@ -41,10 +41,6 @@ export default function Navbar() {
           </Link>
           {user ? (
             <ul className="list">
-              <li className="items" onClick={() => dispatch(logout())}>
-                Logout{" "}
-              </li>
-
               <Link
                 to="/settings"
                 style={{ color: "inherit", textDecoration: "none" }}
@@ -58,6 +54,15 @@ export default function Navbar() {
               >
                 <li className="items">ADD PHOTOS</li>
               </Link>
+              <Link
+                to="/mycreations"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <li className="items">MY CREATIONS</li>
+              </Link>
+              <li className="items" onClick={() => dispatch(logout())}>
+                Logout{" "}
+              </li>
             </ul>
           ) : (
             <ul className="list">

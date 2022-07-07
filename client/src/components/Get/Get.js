@@ -6,6 +6,7 @@ import "./get.css";
 
 function Get() {
   const [create, setCreate] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getAllCreations = async () => {
     try {
@@ -20,29 +21,43 @@ function Get() {
 
   useEffect(() => {
     getAllCreations();
+    const loadData = async () => {
+      // Wait for two second
+      await new Promise((r) => setTimeout(r, 2000));
+
+      // Toggle loading state
+      setLoading((loading) => !loading);
+    };
+
+    loadData();
   }, []);
-  return (
-    <div className="get-container">
-      {create.map((create, index) => (
-        <div className="get-container.img" key={index}>
-          <Link to={`/creation/${create._id}`} className="link">
-            <div className="get-img">
-              <img src={create.img} alt="" className="fpImg" />
-              <div className="get-name">
-                <span className="creationName">{create.name}</span>
-                <span className="creationDate">
-                  {new Date(create.createdAt).toDateString()}
-                </span>
-                <div className="creationArtist">
-                  <span>{create.artist}</span>
+
+  if (loading) {
+    return <h1>loading...</h1>;
+  } else {
+    return (
+      <div className="get-container">
+        {create.map((create, index) => (
+          <div className="get-container.img" key={index}>
+            <Link to={`/creation/${create._id}`} className="link">
+              <div className="get-img">
+                <img src={create.img} alt="" className="fpImg" />
+                <div className="get-name">
+                  <span className="creationName">{create.name}</span>
+                  <span className="creationDate">
+                    {new Date(create.createdAt).toDateString()}
+                  </span>
+                  <div className="creationArtist">
+                    <span>{create.artist}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Get;

@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateForm from "./components/CreateForm/CreateForm";
+import MyCreations from "./components/Get/MyCreations";
 import Single from "./components/Get/Single";
+import Paginator from "./components/Paginator/Paginator";
 import Upload from "./pages/create/Upload";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -16,7 +18,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/create" element={<CreateForm />} />
         <Route path="/creation/:id" element={<Single />} />
+        <Route path="/mycreations" element={<MyCreations />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/pages" element={<Paginator />} />
       </Routes>
     </BrowserRouter>
   );

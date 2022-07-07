@@ -81,7 +81,20 @@ nav {
   .items {
     margin-right: 20px;
     font-size: 16px;
-    padding: 15px;
+    padding: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
+    background-color: rgba(255, 184, 0, 1);
+  }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
+  .items {
+    margin-right: 18px;
+    font-size: 16px;
+    padding: 10px;
     font-weight: 600;
     text-transform: uppercase;
     color: black;
