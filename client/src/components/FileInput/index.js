@@ -12,7 +12,7 @@ const FileInput = ({ name, label, value, type, handleInputState, ...rest }) => {
   const handleUpload = () => {
     setProgressShow(true);
     const fileName = new Date().getTime() + value.name;
-    const storageRef = ref(storage, (type = `/users/${fileName}`));
+    const storageRef = ref(storage, (type = `/creations/${fileName}`));
 
     const uploadTask = uploadBytesResumable(storageRef, value);
     uploadTask.on(

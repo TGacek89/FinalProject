@@ -4,6 +4,7 @@ import "./settings.css";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 function Settings() {
   const { user } = useContext(AuthContext);
@@ -60,16 +61,16 @@ function Settings() {
       <Navbar />
       <div className="settings">
         <div className="settingsWrapper">
-          <span className="settingsUpdateTitle">Welcome! {user.username}</span>
           <div className="settingsTitle">
-            <span className="settingsUpdateTitle">Update Your Account</span>
+            <span className="settingsUpdateTitle">
+              Update user {user.username}
+            </span>
             <span className="settingsDeleteTitle" onClick={deleteUser}>
-              <div className="card-body">Status: </div>
-              Delete Account
+              <div className="card-body">Delete Account </div>
             </span>
           </div>
           <form className="settingsForm" onSubmit={handleSubmit}>
-            <label>Profile Picture</label>
+            <label className="label-Title">Profile Picture</label>
             <div className="settingsPP">
               <img
                 src={file ? URL.createObjectURL(file) : PF + user.profilePic}
@@ -81,25 +82,29 @@ function Settings() {
               <input
                 type="file"
                 id="fileInput"
+                className="settings-Input"
                 style={{ display: "none" }}
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </div>
-            <label>Username</label>
+            <label className="label-Title">Username</label>
             <input
               type="text"
+              className="settings-Input"
               placeholder={user.username}
               onChange={(e) => setUsername(e.target.value)}
             />
-            <label>Email</label>
+            <label className="label-Title">Email</label>
             <input
               type="email"
+              className="settings-Input"
               placeholder={user.email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label>Password</label>
+            <label className="label-Title">Password</label>
             <input
               type="password"
+              className="settings-Input"
               onChange={(e) => setPassword(e.target.value)}
             />
 
@@ -132,6 +137,7 @@ function Settings() {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

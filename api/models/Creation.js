@@ -4,7 +4,7 @@ const CreationSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      // required: true,
     },
     artist: {
       type: String,

@@ -5,8 +5,6 @@ import "./createForm.css";
 import Footer from "../Footer/Footer";
 import Header from "../header/Header";
 import Navbar from "../Navbar/Navbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 const CreateForm = () => {
   const [data, setData] = useState({
