@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import Footer from "../../components/Footer/Footer";
+import Header from "../Header/Header";
+import Navbar from "../Navbar/Navbar";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -22,25 +25,30 @@ function MyCreations() {
     getAllCreations();
   }, []);
   return (
-    <div className="get-container">
-      {create.map((create, index) => (
-        <div className="get-container.img" key={index}>
-          <Link to={`/creation/${create._id}`} className="link">
-            <div className="get-img">
-              <img src={create.img} alt="" className="fpImg" />
-              <div className="get-name">
-                <span className="creationName">{create.name}</span>
-                <span className="creationDate">
-                  {new Date(create.createdAt).toDateString()}
-                </span>
-                <div className="creationArtist">
-                  <span>{create.artist}</span>
+    <div>
+      <Navbar />
+      <Header />
+      <div className="get-container">
+        {create.map((create, index) => (
+          <div className="get-container.img" key={index}>
+            <Link to={`/creation/${create._id}`} className="link">
+              <div className="get-img">
+                <img src={create.img} alt="" className="fpImg" />
+                <div className="get-name">
+                  <span className="creationName">{create.name}</span>
+                  <span className="creationDate">
+                    {new Date(create.createdAt).toDateString()}
+                  </span>
+                  <div className="creationArtist">
+                    <span>{create.artist}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        </div>
-      ))}
+            </Link>
+          </div>
+        ))}
+      </div>
+      <Footer />
     </div>
   );
 }

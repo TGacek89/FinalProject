@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2", sans-serif;
+}
 .settings {
   display: flex;
   align-items: center;
@@ -7,13 +12,10 @@
 
 .settingsWrapper {
   padding: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 35vw;
-  height: 70vh;
-  background-color: rgb(21, 21, 21);
+  height: 80vh;
+  background-color: rgba(21, 21, 21, 0.88);
+  box-shadow: 0 0 2em rgb(139, 139, 139);
   margin-top: 24px;
   border-radius: 8px;
 }
@@ -35,7 +37,7 @@
 }
 
 .settings-Input {
-  width: 50%;
+  width: 80%;
   height: 50px;
   border: none;
   border-bottom: 1px solid rgb(255, 145, 0);
@@ -43,7 +45,7 @@
   margin: 20px 0px;
   font-size: 14px;
   padding-left: 10px;
-  background-color: rgb(21, 21, 21);
+  background-color: rgba(21, 21, 21, 0.117);
 }
 
 .settingsDeleteTitle {
@@ -97,14 +99,86 @@
 }
 
 .settingsSubmit {
-  width: 150px;
+  width: 80px;
   align-self: center;
   border: none;
-  border-radius: 10px;
-  color: white;
-  background-color: rgb(255, 145, 0);
+  color: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 35%
+  );
 
-  padding: 10px;
+  padding: 15px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .settingsWrapper {
+    padding: 24px;
+    width: 80vw;
+    height: 85vh;
+    background-color: rgba(21, 21, 21, 0.88);
+    box-shadow: 0 0 2em rgb(139, 139, 139);
+    margin-top: 24px;
+    border-radius: 8px;
+  }
+  .settingsUpdateTitle {
+    font-size: 20x;
+    margin-bottom: 20px;
+    color: rgb(255, 145, 0);
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .settingsWrapper {
+    padding: 24px;
+    width: 80vw;
+    height: 85vh;
+    background-color: rgba(21, 21, 21, 0.88);
+    box-shadow: 0 0 2em rgb(139, 139, 139);
+    margin-top: 24px;
+    border-radius: 8px;
+  }
+  .settingsUpdateTitle {
+    font-size: 24x;
+    margin-bottom: 20px;
+    color: rgb(255, 145, 0);
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .settingsWrapper {
+    padding: 28px;
+    width: 80vw;
+    height: 85vh;
+    background-color: rgba(21, 21, 21, 0.88);
+    box-shadow: 0 0 2em rgb(139, 139, 139);
+    margin-top: 24px;
+    border-radius: 8px;
+  }
+  .settingsUpdateTitle {
+    font-size: 24x;
+    margin-bottom: 20px;
+    color: rgb(255, 145, 0);
+  }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
+  .settingsWrapper {
+    padding: 28px;
+    width: 80vw;
+    height: 85vh;
+    background-color: rgba(21, 21, 21, 0.88);
+    box-shadow: 0 0 2em rgb(139, 139, 139);
+    margin-top: 24px;
+    border-radius: 8px;
+  }
+  .settingsUpdateTitle {
+    font-size: 24x;
+    margin-bottom: 20px;
+    color: rgb(255, 145, 0);
+  }
 }

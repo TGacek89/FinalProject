@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 2em rgb(162, 162, 162);
   height: 900px;
   width: 100%;
 }
@@ -12,6 +13,7 @@
   width: 50vw;
   height: 60vh;
   background-color: aqua;
+  box-shadow: 0 0 2em rgb(162, 162, 162);
   object-fit: cover;
 }
 

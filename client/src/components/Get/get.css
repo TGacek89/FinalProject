@@ -25,6 +25,11 @@
 .get-img {
   background-color: white;
   margin: 16px;
+  box-shadow: 0 0 2em rgb(162, 162, 162);
+}
+.get-img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 2em rgb(139, 139, 139);
 }
 
 a {

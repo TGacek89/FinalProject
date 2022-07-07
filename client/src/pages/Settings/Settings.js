@@ -63,7 +63,7 @@ function Settings() {
         <div className="settingsWrapper">
           <div className="settingsTitle">
             <span className="settingsUpdateTitle">
-              Update user {user.username}
+              {user.username} Update Your Account
             </span>
             <span className="settingsDeleteTitle" onClick={deleteUser}>
               <div className="card-body">Delete Account </div>

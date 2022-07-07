@@ -42,13 +42,20 @@ video {
 }
 
 .lButton {
+  width: 80px;
+  align-self: center;
   border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 35%
+  );
+
+  padding: 15px;
+  margin-top: 20px;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 .lButton:disabled {

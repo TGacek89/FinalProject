@@ -3,7 +3,7 @@ import axios from "axios";
 import FileInput from "../FileInput";
 import "./createForm.css";
 import Footer from "../Footer/Footer";
-import Header from "../header/Header";
+import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 
 const CreateForm = () => {

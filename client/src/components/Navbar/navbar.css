@@ -9,7 +9,6 @@ nav {
 
 .list {
   list-style-type: none;
-
   background-color: rgba(255, 184, 0, 1);
   height: 100%;
   display: flex;
@@ -17,7 +16,40 @@ nav {
   align-items: center;
   position: relative;
 }
+
 .items {
+  display: inline-block;
+  position: relative;
+  color: black;
+  margin-right: 50px;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: rgba(255, 184, 0, 1);
+  font-family: "Exo 2", sans-serif;
+}
+
+.items:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.items:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* .items {
   margin-right: 50px;
   font-size: 20px;
   padding: 20px;
@@ -26,7 +58,7 @@ nav {
   color: black;
   cursor: pointer;
   background-color: rgba(255, 184, 0, 1);
-}
+} */
 
 .btn {
   display: none;

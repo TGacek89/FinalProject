@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import Header from "../header/Header";
+import Header from "../Header/Header";
 import "./single.css";
 import Footer from "../Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
