@@ -39,7 +39,7 @@ const CreateForm = () => {
       <Navbar />
       <Header />
       <div className="i-form-container">
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="create.form" onSubmit={handleSubmit}>
           <div className="create-input">
             <h1 className="creation-title">CREATE</h1>
             <FileInput

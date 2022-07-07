@@ -37,7 +37,19 @@ export default function Navbar() {
             <li className="items">Home</li>
           </Link>
           <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-            <li className="items">Contact</li>
+            <li
+              className="items"
+              onClick={() =>
+                window.scrollTo({
+                  left: 0,
+
+                  top: window.innerHeight * 4,
+                  behavior: "smooth",
+                })
+              }
+            >
+              Contact
+            </li>
           </Link>
           {user ? (
             <ul className="list">
@@ -60,9 +72,11 @@ export default function Navbar() {
               >
                 <li className="items">MY CREATIONS</li>
               </Link>
-              <li className="items" onClick={() => dispatch(logout())}>
-                Logout{" "}
-              </li>
+              <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+                <li className="items" onClick={() => dispatch(logout())}>
+                  Logout{" "}
+                </li>
+              </Link>
             </ul>
           ) : (
             <ul className="list">

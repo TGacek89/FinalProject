@@ -25,6 +25,10 @@ const Update = (_) => {
     }
   };
 
+  const refreshPage = async () => {
+    window.location.reload(false);
+  };
+
   useEffect(() => {
     getAllCreations();
   }, []);
@@ -92,7 +96,14 @@ const Update = (_) => {
                   setArtist(e.target.value);
                 }}
               />{" "}
-              <button onClick={updateCreation}>Update </button>
+              <button
+                onClick={() => {
+                  updateCreation();
+                  refreshPage();
+                }}
+              >
+                Update{" "}
+              </button>
               <div>
                 Image update
                 <input type="file" onChange={handleChange} />

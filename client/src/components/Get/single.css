@@ -9,8 +9,8 @@
 }
 
 .single-img {
-  width: 70vw;
-  height: 70vh;
+  width: 50vw;
+  height: 60vh;
   background-color: aqua;
   object-fit: cover;
 }
@@ -19,12 +19,7 @@
   pointer-events: painted;
   padding: 16px;
   color: red;
-}
-
-.single-update {
-  pointer-events: painted;
-  padding: 16px;
-  color: #ffb800;
+  margin: 20px;
 }
 
 .single-form {
@@ -34,4 +29,10 @@
 
 .single-title {
   font-size: 30px;
+  padding: 20px;
+}
+
+.single-artist {
+  font-size: 20px;
+  margin-bottom: 10px;
 }

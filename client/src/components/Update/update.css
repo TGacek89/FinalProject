@@ -9,6 +9,7 @@
   pointer-events: painted;
   padding: 16px;
   color: green;
+  margin: 20px;
 }
 
 .update-form {

@@ -8,7 +8,7 @@
 
 .create-form {
   width: 50vw;
-  height: 40vh;
+  height: 60vh;
   background: rgb(236, 231, 231);
   border-radius: 2px;
   display: flex;
@@ -54,6 +54,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.creation-title {
+  padding: 40px;
 }
 
 @media screen and (max-width: 480px) {

@@ -8,11 +8,11 @@ import Footer from "../Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Update from "../Update/Update";
-import Page from "../Paginator/Paginator";
 
 const Single = (_) => {
   const [create, setCreate] = useState([]);
   const [deleted, setDeleted] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   let { id } = useParams();
   //GET ONE
@@ -29,6 +29,9 @@ const Single = (_) => {
 
   useEffect(() => {
     getAllCreations();
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   }, []);
   useEffect(() => {}, [deleted, create]);
 
@@ -44,33 +47,37 @@ const Single = (_) => {
       });
   }
 
-  return (
-    <div>
-      <Navbar />
-      <Header />
-      {/* <Header /> */}
-      <div className="single-container">
-        <div className="single-title">{create.name}</div>
-        <div className="single-artist">{create.artist}</div>
-        <div>
-          <img className="single-img" src={create.img} alt="" />
+  if (loading) {
+    return <h1>loading...</h1>;
+  } else {
+    return (
+      <div>
+        <Navbar />
+        <Header />
+        {/* <Header /> */}
+        <div className="single-container">
+          <div className="single-title">{create.name}</div>
+          <div className="single-artist">{create.artist}</div>
+          <div>
+            <img className="single-img" src={create.img} alt="" />
+          </div>
+
+          <div className="single-form">
+            <FontAwesomeIcon
+              icon={faTrash}
+              size="2x"
+              className="single-trash"
+              onClick={deletePost}
+            />{" "}
+            <Update />
+          </div>
+
+          {deleted && <Navigate to="/create" replace={true} />}
         </div>
 
-        <div className="single-form">
-          <FontAwesomeIcon
-            icon={faTrash}
-            size="2x"
-            className="single-trash"
-            onClick={deletePost}
-          />{" "}
-          <Update />
-        </div>
-
-        {deleted && <Navigate to="/create" replace={true} />}
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
-  );
+    );
+  }
 };
 export default Single;
