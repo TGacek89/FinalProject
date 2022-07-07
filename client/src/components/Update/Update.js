@@ -84,6 +84,7 @@ const Update = (_) => {
             <div className="update-form">
               <input
                 type="text"
+                placeholder="New title"
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
@@ -91,6 +92,7 @@ const Update = (_) => {
               />{" "}
               <input
                 type="text"
+                placeholder="New description"
                 value={artist}
                 onChange={(e) => {
                   setArtist(e.target.value);

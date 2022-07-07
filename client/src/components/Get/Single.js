@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Header from "../header/Header";
 import "./single.css";
@@ -54,7 +54,6 @@ const Single = (_) => {
       <div>
         <Navbar />
         <Header />
-        {/* <Header /> */}
         <div className="single-container">
           <div className="single-title">{create.name}</div>
           <div className="single-artist">{create.artist}</div>
