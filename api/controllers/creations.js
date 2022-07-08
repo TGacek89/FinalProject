@@ -4,6 +4,7 @@ import Creation from "../models/Creation.js";
 
 export const newCreation = async (req, res) => {
   try {
+    console.log(req.body);
     const creation = await Creation(req.body).save();
     res.status(201).send({ data: creation, message: "Created successfully" });
   } catch (error) {
@@ -49,6 +50,19 @@ export const deleteCreation = async (req, res) => {
 //GET
 export const getCreation = async (req, res) => {
   try {
+    const create = await Creation.findById(req.params.id);
+    res.status(200).json(create);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+//GET TODO: edit this function for getting proper creations
+export const getMyCreation = async (req, res) => {
+  const user = req.query.user;
+  try {
+    if (username) {
+      posts = await Post.find({ username });
     const create = await Creation.findById(req.params.id);
     res.status(200).json(create);
   } catch (err) {
