@@ -22,14 +22,14 @@ router.get("/checkadmin/:id", verifyToken, (req, res, next) => {
 });
 
 //UPDATE
-router.put("/:id", updateUser);
+router.put("/:id", verifyToken, updateUser);
 
 //DELETE
 router.delete("/:id", verifyToken, deleteUser);
 // router.delete("/:id", verifyToken);
 
 //GET
-router.get("/:id", getUser);
+router.get("/:id", verifyToken, getUser);
 
 //GET ALL
 router.get("/", verifyToken, getUsers);

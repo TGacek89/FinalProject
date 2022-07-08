@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import FileInput from "../FileInput";
 import "./createForm.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
+import { AuthContext } from "../../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 const CreateForm = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const [data, setData] = useState({
+    author: user._id,
     name: "",
     artist: "",
     img: "",
@@ -23,6 +28,7 @@ const CreateForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(data);
     try {
       const url = process.env.REACT_APP_API_URL + "/creation";
       const { data: res } = await axios.post(url, data);
@@ -34,53 +40,58 @@ const CreateForm = () => {
 
   return (
     <div>
+      {!user && <Navigate to="/login" replace={true} />}
       <Navbar />
       <Header />
-      <div className="i-form-container">
-        <form className="create.form" onSubmit={handleSubmit}>
-          <div className="create-input">
-            <h1 className="creation-title">CREATE</h1>
-            <FileInput
-              name="img"
-              label="Choose Image"
-              handleInputState={handleInputState}
-              type="image"
-              value={data.img}
-            />{" "}
-            <input
-              type="text"
-              maxLength="20"
-              className="create-input-field"
-              placeholder="Creation Name... max 20 charactters."
-              name="name"
-              onChange={handleChange}
-              value={data.name}
-            />
-            <input
-              type="text"
-              maxLength="20"
-              className="create-input-field"
-              placeholder="Description... max 20 charactters."
-              name="artist"
-              onChange={handleChange}
-              value={data.artist}
-            />
-          </div>
+      {user && (
+        <>
+          <div className="i-form-container">
+            <form className="create.form" onSubmit={handleSubmit}>
+              <div className="create-input">
+                <h1 className="creation-title">CREATE</h1>
+                <FileInput
+                  name="img"
+                  label="Choose Image"
+                  handleInputState={handleInputState}
+                  type="image"
+                  value={data.img}
+                />{" "}
+                <input
+                  type="text"
+                  maxLength="20"
+                  className="create-input-field"
+                  placeholder="Creation Name... max 20 charactters."
+                  name="name"
+                  onChange={handleChange}
+                  value={data.name}
+                />
+                <input
+                  type="text"
+                  maxLength="20"
+                  className="create-input-field"
+                  placeholder="Description... max 20 charactters."
+                  name="artist"
+                  onChange={handleChange}
+                  value={data.artist}
+                />
+              </div>
 
-          <div className="create-submit">
-            {" "}
-            <button
-              type="submit"
-              className="submit-btn"
-              onClick={() => {
-                window.location.reload(false);
-              }}
-            >
-              Submit
-            </button>
+              <div className="create-submit">
+                {" "}
+                <button
+                  type="submit"
+                  className="submit-btn"
+                  onClick={() => {
+                    // window.location.reload(false);
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+        </>
+      )}
       <Footer />
     </div>
   );

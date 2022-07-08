@@ -5,6 +5,7 @@ import {
   getCreations,
   deleteCreation,
   updateCreation,
+  getMyCreation,
 } from "../controllers/creations.js";
 import { verifyToken } from "../utils/verifyToken.js";
 
@@ -17,10 +18,13 @@ router.post("/", newCreation);
 router.put("/:id", updateCreation);
 
 // GET ALL
-router.get("/", getCreations, verifyToken);
+router.get("/", getCreations);
 
 // GET
 router.get("/:id", getCreation);
+
+//GET creations by user
+router.get("/user/", getMyCreation);
 
 // DELETE
 router.delete("/:id", deleteCreation, verifyToken);

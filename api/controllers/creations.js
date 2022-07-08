@@ -16,7 +16,7 @@ export const newCreation = async (req, res) => {
 export const updateCreation = async (req, res) => {
   try {
     const create = await Creation.findByIdAndUpdate(req.params.id);
-    if (create.username === req.body.username) {
+    if (create.author === req.body.username) {
       try {
         const updatedCreation = await Creation.findByIdAndUpdate(
           req.params.id,
@@ -59,12 +59,11 @@ export const getCreation = async (req, res) => {
 
 //GET TODO: edit this function for getting proper creations
 export const getMyCreation = async (req, res) => {
-  const user = req.query.user;
   try {
-    if (username) {
-      posts = await Post.find({ username });
     const create = await Creation.findById(req.params.id);
-    res.status(200).json(create);
+    if (create.author === req.body.user) {
+      res.status(200).json(create);
+    }
   } catch (err) {
     res.status(500).json(err);
   }
