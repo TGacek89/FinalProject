@@ -13,7 +13,7 @@ function MyCreations() {
   const getAllCreations = async () => {
     try {
       const { data } = await axios.get(
-        process.env.REACT_APP_API_URL + "/creation/user/"
+        process.env.REACT_APP_API_URL + "/creation/user/:id"
       );
       setCreate(data.data);
     } catch (error) {

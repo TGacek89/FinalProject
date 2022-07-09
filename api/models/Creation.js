@@ -10,13 +10,17 @@ const CreationSchema = new mongoose.Schema(
       type: String,
       // required: true,
     },
+    userName: {
+      type: String,
+      // required: true,
+    },
     artist: {
       type: String,
       // required: true,
     },
 
     img: {
-      type: [String],
+      type: String,
       // required: true,
     },
   },

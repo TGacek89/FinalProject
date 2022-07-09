@@ -24,7 +24,7 @@ router.get("/", getCreations);
 router.get("/:id", getCreation);
 
 //GET creations by user
-router.get("/user/", getMyCreation);
+router.get("/mycreation", getMyCreation);
 
 // DELETE
 router.delete("/:id", deleteCreation, verifyToken);

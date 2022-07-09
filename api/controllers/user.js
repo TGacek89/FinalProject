@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 export const updateUser = async (req, res, next) => {
   try {
-    req.body.password = await bcrypt.hash(req.body.password, 10);
+    // req.body.password = await bcrypt.hash(req.body.password, 10);
     // console.log(req.body);
     const updatedUser = await User.findByIdAndUpdate(
       req.params.id,

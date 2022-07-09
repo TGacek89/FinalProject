@@ -1,0 +1,22 @@
+.file-update-input {
+  background-color: rgb(255, 204, 0);
+  border: none;
+  width: 60px;
+}
+
+.update-file-preview-img {
+  display: none;
+}
+
+.update-file-progress-container {
+  width: 100px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-file-check-img {
+  width: 20px;
+  height: 20px;
+}

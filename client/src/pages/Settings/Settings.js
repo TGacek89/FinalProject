@@ -6,6 +6,9 @@ import { AuthContext } from "../../context/AuthContext";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { Navigate } from "react-router-dom";
+import PhotoUpdate from "../../components/Update/Photo update/PhotoUpdate";
+import { logout } from "../../context/AuthActions";
+import GetPhoto from "./getPhoto";
 
 function Settings() {
   const { user } = useContext(AuthContext);
@@ -17,12 +20,7 @@ function Settings() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
-  const [file, setFile] = useState(null);
-  let PF = "";
-  if (user) {
-    PF = "http://localhost:8800/api/users/" + user._id;
-  }
-  console.log(PF);
+  const { dispatch } = useContext(AuthContext);
 
   useEffect(() => {}, [success, error]);
 
@@ -71,33 +69,21 @@ function Settings() {
           <div className="settings">
             <div className="settingsWrapper">
               <div className="settingsTitle">
-                <span className="settingsUpdateTitle">
-                  {user.username} Update Your Account
-                </span>
-                <span className="settingsDeleteTitle" onClick={deleteUser}>
+                <span className="settingsUpdateTitle">Update Your Account</span>
+                <span
+                  className="settingsDeleteTitle"
+                  onClick={() => {
+                    dispatch(logout());
+                    deleteUser();
+                  }}
+                >
                   <div className="card-body">Delete Account </div>
                 </span>
               </div>
+              <label className="label-Title">Profile Picture</label>
+              <GetPhoto />
+              <PhotoUpdate />
               <form className="settingsForm" onSubmit={handleSubmit}>
-                <label className="label-Title">Profile Picture</label>
-                <div className="settingsPP">
-                  <img
-                    src={
-                      file ? URL.createObjectURL(file) : PF + user.profilePic
-                    }
-                    alt=""
-                  />
-                  <label htmlFor="fileInput">
-                    <i className="settingsPPIcon far fa-user-circle"></i>
-                  </label>
-                  <input
-                    type="file"
-                    id="fileInput"
-                    className="settings-Input"
-                    style={{ display: "none" }}
-                    onChange={(e) => setFile(e.target.files[0])}
-                  />
-                </div>
                 <label className="label-Title">Username</label>
                 <input
                   type="text"

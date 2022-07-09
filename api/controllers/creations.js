@@ -58,12 +58,28 @@ export const getCreation = async (req, res) => {
 };
 
 //GET TODO: edit this function for getting proper creations
+// export const getMyCreation = async (req, res) => {
+//   try {
+//     const create = await Creation.find({ data: req.user.id })
+//       .res.status(200)
+//       .json(create);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// };
+
+//GET ALL POSTS
 export const getMyCreation = async (req, res) => {
+  const author = req.query.author._id;
+
   try {
-    const create = await Creation.findById(req.params.id);
-    if (create.author === req.body.user) {
-      res.status(200).json(create);
+    let create;
+    if (author) {
+      create = await Creation.find({ author });
+    } else {
+      create = await Creation.find();
     }
+    res.status(200).json(create);
   } catch (err) {
     res.status(500).json(err);
   }

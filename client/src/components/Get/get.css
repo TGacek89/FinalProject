@@ -1,9 +1,9 @@
 .get-container {
   display: flex;
   flex-wrap: wrap;
-
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .fpImg {
@@ -26,6 +26,7 @@
   background-color: white;
   margin: 16px;
   box-shadow: 0 0 2em rgb(162, 162, 162);
+  position: relative;
 }
 .get-img:hover {
   transform: scale(1.01);
@@ -43,6 +44,12 @@ a {
   margin: 16px;
 }
 
+.creationAuthor {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+}
+
 .creationName {
   color: rgb(21, 21, 21);
   font-size: 24px;
@@ -53,7 +60,7 @@ a {
   text-align: left;
   font-size: 16px;
   color: rgb(21, 21, 21);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 @media only screen and (max-width: 480px) {

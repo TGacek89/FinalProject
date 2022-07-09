@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./get.css";
+import GetPhoto from "../../pages/Settings/getPhoto";
 
 function Get() {
   const [create, setCreate] = useState([]);
@@ -35,9 +36,14 @@ function Get() {
           <div className="get-container.img" key={index}>
             <Link to={`/creation/${create._id}`} className="link">
               <div className="get-img">
+                <span className="creationAuthor">
+                  AUTHOR: {create.userName}
+                </span>
                 <img src={create.img} alt="" className="fpImg" />
+
                 <div className="get-name">
                   <span className="creationName">{create.name}</span>
+
                   <span className="creationDate">
                     {new Date(create.createdAt).toDateString()}
                   </span>

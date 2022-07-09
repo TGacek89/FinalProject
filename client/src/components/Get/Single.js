@@ -8,8 +8,11 @@ import Footer from "../Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Update from "../Update/Update";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Single = (_) => {
+  const { user } = useContext(AuthContext);
   const [create, setCreate] = useState([]);
   const [deleted, setDeleted] = useState(false);
   const [loading, setLoading] = useState(true);

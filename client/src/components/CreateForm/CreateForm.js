@@ -13,6 +13,7 @@ const CreateForm = () => {
   console.log(user);
   const [data, setData] = useState({
     author: user._id,
+    userName: user.username,
     name: "",
     artist: "",
     img: "",
