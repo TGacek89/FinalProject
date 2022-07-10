@@ -14,6 +14,7 @@ const CreateForm = () => {
   const [data, setData] = useState({
     author: user._id,
     userName: user.username,
+    avatar: user.profilePic[0],
     name: "",
     artist: "",
     img: "",
@@ -83,7 +84,7 @@ const CreateForm = () => {
                   type="submit"
                   className="submit-btn"
                   onClick={() => {
-                    // window.location.reload(false);
+                    window.location.reload(false);
                   }}
                 >
                   Submit

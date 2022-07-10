@@ -48,7 +48,7 @@ const PhotoUpdate = () => {
             {" "}
             <button
               type="submit"
-              className="submit-btn"
+              className="upload-submit-btn"
               onClick={() => {
                 window.location.reload(false);
               }}

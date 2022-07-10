@@ -70,15 +70,6 @@ function Settings() {
             <div className="settingsWrapper">
               <div className="settingsTitle">
                 <span className="settingsUpdateTitle">Update Your Account</span>
-                <span
-                  className="settingsDeleteTitle"
-                  onClick={() => {
-                    dispatch(logout());
-                    deleteUser();
-                  }}
-                >
-                  <div className="card-body">Delete Account </div>
-                </span>
               </div>
               <label className="label-Title">Profile Picture</label>
               <GetPhoto />
@@ -109,6 +100,15 @@ function Settings() {
                 <button className="settingsSubmit" type="submit">
                   Update
                 </button>
+                <span
+                  className="settingsDeleteTitle"
+                  onClick={() => {
+                    dispatch(logout());
+                    deleteUser();
+                  }}
+                >
+                  <div className="card-body">Delete Account </div>
+                </span>
                 {success && (
                   <span
                     style={{

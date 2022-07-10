@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-import "./getPhoto.css";
+import "./getAvatar.css";
 
-export default function GetPhoto() {
+export default function GetAvatar() {
   const [create, setCreate] = useState([]);
   const [loading, setLoading] = useState(true);
   const { user } = useContext(AuthContext);
@@ -30,8 +30,8 @@ export default function GetPhoto() {
     return <h1>loading...</h1>;
   } else {
     return (
-      <div className="get-photo-container">
-        <img src={create.profilePic} alt="" className="profilePic" />
+      <div className="profileAvatar">
+        <img src={create.avatar} alt="" className="profileAvatar" />
       </div>
     );
   }

@@ -7,14 +7,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100vh;
+  box-shadow: 0 0 2em rgb(139, 139, 139);
 }
 
 .settingsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
   padding: 24px;
-  width: 35vw;
-  height: 80vh;
-  background-color: rgba(21, 21, 21, 0.88);
+  width: 30vw;
+  height: 90vh;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(255, 184, 0, 1) 35%
+  );
   box-shadow: 0 0 2em rgb(139, 139, 139);
   margin-top: 24px;
   border-radius: 8px;
@@ -24,28 +35,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: black;
 }
 
 .settingsUpdateTitle {
   font-size: 30px;
   margin-bottom: 20px;
-  color: rgb(255, 145, 0);
+  color: black;
 }
 
 .label-Title {
-  color: rgb(255, 145, 0);
+  color: black;
 }
 
 .settings-Input {
-  width: 80%;
+  width: 25vw;
   height: 50px;
   border: none;
-  border-bottom: 1px solid rgb(255, 145, 0);
-  color: rgb(255, 145, 0);
+  border-bottom: 1px solid rgb(21, 21, 21);
+  color: black;
   margin: 20px 0px;
   font-size: 14px;
   padding-left: 10px;
-  background-color: rgba(21, 21, 21, 0.117);
+  background-color: rgb(21, 21, 21);
 }
 
 .settingsDeleteTitle {
@@ -57,6 +69,8 @@
 .settingsForm {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .settingsPP {
@@ -102,17 +116,16 @@
   width: 80px;
   align-self: center;
   border: none;
-  color: rgb(0, 0, 0);
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 145, 0, 1) 0%,
-    rgba(255, 184, 0, 1) 35%
-  );
-
+  color: rgb(255, 255, 255);
+  background: rgb(21, 21, 21);
+  box-shadow: 0 0 2em rgb(139, 139, 139);
   padding: 15px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.card-body {
+  margin-left: 300px;
 }
 
 @media screen and (max-width: 480px) {
@@ -128,7 +141,22 @@
   .settingsUpdateTitle {
     font-size: 20x;
     margin-bottom: 20px;
-    color: rgb(255, 145, 0);
+    color: black;
+  }
+  .settings-Input {
+    width: 80vw;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: black;
+    margin: 20px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
+  }
+  .card-body {
+    margin-left: 250px;
+    margin-bottom: 25px;
   }
 }
 
@@ -145,14 +173,29 @@
   .settingsUpdateTitle {
     font-size: 24x;
     margin-bottom: 20px;
-    color: rgb(255, 145, 0);
+    color: black;
+  }
+  .settings-Input {
+    width: 80vw;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: black;
+    margin: 20px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
+  }
+  .card-body {
+    margin-left: 400px;
+    margin-bottom: 25px;
   }
 }
 
 @media only screen and (min-width: 767px) and (max-width: 991px) {
   .settingsWrapper {
     padding: 28px;
-    width: 80vw;
+    width: 60vw;
     height: 85vh;
     background-color: rgba(21, 21, 21, 0.88);
     box-shadow: 0 0 2em rgb(139, 139, 139);
@@ -162,14 +205,29 @@
   .settingsUpdateTitle {
     font-size: 24x;
     margin-bottom: 20px;
-    color: rgb(255, 145, 0);
+    color: black;
+  }
+  .settings-Input {
+    width: 60vw;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: black;
+    margin: 20px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
+  }
+  .card-body {
+    margin-left: 400px;
+    margin-bottom: 25px;
   }
 }
 
 @media only screen and (min-width: 991px) and (max-width: 1200px) {
   .settingsWrapper {
     padding: 28px;
-    width: 80vw;
+    width: 60vw;
     height: 85vh;
     background-color: rgba(21, 21, 21, 0.88);
     box-shadow: 0 0 2em rgb(139, 139, 139);
@@ -179,6 +237,18 @@
   .settingsUpdateTitle {
     font-size: 24x;
     margin-bottom: 20px;
-    color: rgb(255, 145, 0);
+    color: black;
+  }
+
+  .settings-Input {
+    width: 60vw;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: black;
+    margin: 20px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
   }
 }

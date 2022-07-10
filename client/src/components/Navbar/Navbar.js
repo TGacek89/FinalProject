@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { logout } from "../../context/AuthActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import GetPhoto from "../../pages/Settings/getPhoto";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);

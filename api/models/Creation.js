@@ -14,6 +14,10 @@ const CreationSchema = new mongoose.Schema(
       type: String,
       // required: true,
     },
+    avatar: {
+      type: [String],
+      // required: true,
+    },
     artist: {
       type: String,
       // required: true,

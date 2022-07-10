@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./get.css";
 import GetPhoto from "../../pages/Settings/getPhoto";
+import GetAvatar from "./GetAvatar";
 
 function Get() {
   const [create, setCreate] = useState([]);
@@ -38,6 +39,7 @@ function Get() {
               <div className="get-img">
                 <span className="creationAuthor">
                   AUTHOR: {create.userName}
+                  <GetAvatar />
                 </span>
                 <img src={create.img} alt="" className="fpImg" />
 
