@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
-import postsRoute from "./routes/posts.js";
 import creationRoute from "./routes/creation.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -31,7 +30,6 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
-app.use("/api/posts", postsRoute);
 app.use("/api/creation", creationRoute);
 
 app.use((err, req, res, next) => {

@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+.my-container {
+  display: flex;
+  height: 100vh;
+
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 2em rgb(162, 162, 162);
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  height: 100vh;
+  background-color: aqua;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+}
+
+.my-img {
+  width: 100%;
+  height: 85vh;
+
+  box-shadow: 0 0 2em rgb(162, 162, 162);
+  object-fit: cover;
+}
+
+.my-trash {
+  pointer-events: painted;
+  padding: 16px;
+  color: red;
+  margin: 20px;
+}
+
+.my-form {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+}
+
+.my-title {
+  font-size: 30px;
+  padding: 20px;
+}
+
+.my-artist {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .my-img {
+    width: 320px;
+    height: 240px;
+
+    object-fit: cover;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .my-img {
+    width: 450px;
+    height: 338px;
+
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .my-img {
+    width: 600px;
+    height: 450px;
+
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
+  .my-img {
+    width: 720px;
+    height: 540px;
+
+    object-fit: cover;
+  }
+  .my-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    height: 1000px;
+    width: 100%;
+  }
+}

@@ -1,20 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import "./single.css";
 import Footer from "../Footer/Footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import Update from "../Update/Update";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 
 const Single = (_) => {
-  const { user } = useContext(AuthContext);
   const [create, setCreate] = useState([]);
-  const [deleted, setDeleted] = useState(false);
   const [loading, setLoading] = useState(true);
 
   let { id } = useParams();
@@ -35,20 +28,8 @@ const Single = (_) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  }, []);
-  useEffect(() => {}, [deleted, create]);
-
-  //DELETE POST
-  function deletePost() {
-    axios
-      .delete(process.env.REACT_APP_API_URL + `/creation/${id}`)
-      .then((res) => {
-        // alert("Post deleted!");
-        setDeleted(true);
-        if (res.statusText === "OK") {
-        }
-      });
-  }
+  });
+  useEffect(() => {}, [create]);
 
   if (loading) {
     return <h1>loading...</h1>;
@@ -58,25 +39,12 @@ const Single = (_) => {
         <Navbar />
         <Header />
         <div className="single-container">
-          <div className="single-title">{create.name}</div>
-          <div className="single-artist">{create.artist}</div>
           <div>
             <img className="single-img" src={create.img} alt="" />
           </div>
-
-          <div className="single-form">
-            <FontAwesomeIcon
-              icon={faTrash}
-              size="2x"
-              className="single-trash"
-              onClick={deletePost}
-            />{" "}
-            <Update />
-          </div>
-
-          {deleted && <Navigate to="/create" replace={true} />}
+          <div className="single-title">{create.name}</div>
+          <div className="single-artist">{create.artist}</div>
         </div>
-
         <Footer />
       </div>
     );

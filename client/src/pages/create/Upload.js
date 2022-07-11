@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import CreateForm from "../../components/CreateForm/CreateForm";
 import Navbar from "../../components/Navbar/Navbar";
 import Header from "../../components/header/Header";
-import "./upload.css";
 
 function Upload() {
   const [create, setCreate] = useState([]);

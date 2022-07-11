@@ -7,7 +7,7 @@ const CreationSchema = new mongoose.Schema(
       // required: true,
     },
     author: {
-      type: String,
+      type: mongoose.Types.ObjectId,
       // required: true,
     },
     userName: {

@@ -46,7 +46,11 @@ const Footer = () => {
             </div>
             <div className="c-info-item">
               <img src={Linkedin} alt="" className="c-icon" />
-              <a href="https://www.linkedin.com/in/tomasz-gacek-bb5815a4">
+              <a
+                href="https://www.linkedin.com/in/tomasz-gacek-bb5815a4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Tomasz gacek
               </a>
             </div>

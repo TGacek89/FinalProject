@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateForm from "./components/CreateForm/CreateForm";
 import MyCreations from "./components/Get/MyCreations";
+import MyCreationsSingle from "./components/Get/MyCreationsSingle";
 import Single from "./components/Get/Single";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
@@ -16,6 +17,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/create" element={<CreateForm />} />
         <Route path="/creation/:id" element={<Single />} />
+        <Route
+          path="/mycreations/creation/:id"
+          element={<MyCreationsSingle />}
+        />
         <Route path="/mycreations" element={<MyCreations />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>

@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
-import Footer from "../../components/Footer/Footer";
-import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
-
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./myCreations.css";
+import Menu from "../../components/Navbar/Navbar";
 
 function MyCreations() {
-  const [create, setCreate] = useState([]);
+  const [creations, setCreate] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({
+    title: "",
+    artist: "",
+    img: "",
+    author: JSON.parse(localStorage.getItem("user")) || null,
+  });
 
   const getAllCreations = async () => {
+    const user = await JSON.parse(localStorage.getItem("user"));
     try {
       const { data } = await axios.get(
-        process.env.REACT_APP_API_URL + "/creation/user/:id"
+        `${process.env.REACT_APP_API_URL}/creation/author/${user._id}`
       );
+      console.log(data);
       setCreate(data.data);
     } catch (error) {
       console.log(error);
@@ -23,19 +29,22 @@ function MyCreations() {
 
   useEffect(() => {
     getAllCreations();
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   }, []);
+
   return (
-    <div>
-      <Navbar />
-      <Header />
+    <>
       <div className="get-container">
-        {create.map((create, index) => (
+        <Menu />
+        {creations.map((create, index) => (
           <div className="get-container.img" key={index}>
-            <Link to={`/creation/${create._id}`} className="link">
+            <Link to={`/mycreations/creation/${create._id}`} className="link">
               <div className="get-img">
                 <img src={create.img} alt="" className="fpImg" />
                 <div className="get-name">
-                  <span className="creationName">{create.name}</span>
+                  <span className="creationName">{create.userName}</span>
                   <span className="creationDate">
                     {new Date(create.createdAt).toDateString()}
                   </span>
@@ -48,8 +57,7 @@ function MyCreations() {
           </div>
         ))}
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 

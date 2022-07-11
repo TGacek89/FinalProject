@@ -1,0 +1,25 @@
+.file-update-input {
+  background-color: rgb(0, 0, 0);
+  color: gray;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.update-file-preview-img {
+  display: none;
+}
+
+.update-file-progress-container {
+  width: 100px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-file-check-img {
+  width: 30px;
+  height: 30px;
+}

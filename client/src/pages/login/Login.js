@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import videoBg from "./Video/videoBg.mp4";
 import "./login.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -32,39 +33,42 @@ const Login = () => {
   };
 
   return (
-    <div className="l">
-      <div className="l-left">
-        <div className="main">
-          <video src={videoBg} autoPlay loop muted />
-        </div>
+    <div>
+      <Navbar />
+      <div className="l">
+        <div className="l-left">
+          <div className="main">
+            <video src={videoBg} autoPlay loop muted />
+          </div>
 
-        <div className="l.right">
-          <div className="lContainer">
-            <h1 className="i-title"> LOGIN</h1>
-            <label className="top-text">Username</label>
-            <input
-              type="text"
-              placeholder="Enter your username..."
-              id="username"
-              onChange={handleChange}
-              className="lInput"
-            />
-            <label className="top-text">Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password..."
-              id="password"
-              onChange={handleChange}
-              className="lInput"
-            />
-            <button
-              disabled={loading}
-              onClick={handleClick}
-              className="lButton"
-            >
-              Login
-            </button>
-            {error && <span>{error.message}</span>}
+          <div className="l.right">
+            <div className="lContainer">
+              <h1 className="i-title"> LOGIN</h1>
+              <label className="top-text">Username</label>
+              <input
+                type="text"
+                placeholder="Enter your username..."
+                id="username"
+                onChange={handleChange}
+                className="lInput"
+              />
+              <label className="top-text">Password</label>
+              <input
+                type="password"
+                placeholder="Enter your password..."
+                id="password"
+                onChange={handleChange}
+                className="lInput"
+              />
+              <button
+                disabled={loading}
+                onClick={handleClick}
+                className="lButton"
+              >
+                Login
+              </button>
+              {error && <span>{error.message}</span>}
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 .update-container {
   height: 10vh;
+  width: 10vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -16,4 +17,12 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.update-input {
+  margin-top: 200px;
+}
+
+.update-btn {
+  border: none;
 }

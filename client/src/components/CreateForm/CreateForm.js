@@ -12,9 +12,9 @@ const CreateForm = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const [data, setData] = useState({
-    author: user._id,
+    author: JSON.parse(localStorage.getItem("user")) || null,
     userName: user.username,
-    avatar: user.profilePic[0],
+    // avatar: user.profilePic[0],
     name: "",
     artist: "",
     img: "",
@@ -69,9 +69,9 @@ const CreateForm = () => {
                 />
                 <input
                   type="text"
-                  maxLength="20"
+                  maxLength="60"
                   className="create-input-field"
-                  placeholder="Description... max 20 charactters."
+                  placeholder="Description... max 60 charactters."
                   name="artist"
                   onChange={handleChange}
                   value={data.artist}

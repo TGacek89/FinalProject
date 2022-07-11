@@ -10,23 +10,11 @@
 }
 
 .single-img {
-  width: 50vw;
-  height: 60vh;
-  background-color: aqua;
+  width: 70vw;
+  height: 90vh;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 0 2em rgb(162, 162, 162);
   object-fit: cover;
-}
-
-.single-trash {
-  pointer-events: painted;
-  padding: 16px;
-  color: red;
-  margin: 20px;
-}
-
-.single-form {
-  display: flex;
-  justify-content: left;
 }
 
 .single-title {
@@ -54,6 +42,9 @@
 
     object-fit: cover;
   }
+  .single-container {
+    height: 600px;
+  }
 }
 
 @media only screen and (min-width: 767px) and (max-width: 991px) {
@@ -62,6 +53,9 @@
     height: 450px;
 
     object-fit: cover;
+  }
+  .single-container {
+    height: 650px;
   }
 }
 
@@ -73,12 +67,6 @@
     object-fit: cover;
   }
   .single-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    height: 1000px;
-    width: 100%;
+    height: 750px;
   }
 }

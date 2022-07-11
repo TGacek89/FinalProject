@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import "./update.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
+import SinglePhotoUpdate from "./Single update/PhotoUpdate";
 
 const Update = (_) => {
   const [create, setCreate] = useState([]);
   const [name, setName] = useState("");
   const [artist, setArtist] = useState("");
-  const [profile, setProfile] = useState("");
   const [hidden, setHidden] = useState(true);
   let { id } = useParams();
 
@@ -31,7 +31,7 @@ const Update = (_) => {
 
   useEffect(() => {
     getAllCreations();
-  }, []);
+  });
   useEffect(() => {}, [create]);
 
   //UPDATE
@@ -53,22 +53,6 @@ const Update = (_) => {
       .catch((err) => {});
   }
 
-  //UPDATE PHOTO
-  const handleChange = (e) => {
-    console.log(e.target.files);
-    setProfile(e.target.files[0]);
-  };
-
-  const handleApi = () => {
-    const formData = new FormData();
-    formData.append("profile", profile);
-    axios
-      .put(process.env.REACT_APP_API_URL + `/creation/${id}`, formData)
-      .then((res) => {
-        console.log(res);
-      });
-  };
-
   return (
     <div>
       <FontAwesomeIcon
@@ -85,6 +69,7 @@ const Update = (_) => {
               <input
                 type="text"
                 placeholder="New title"
+                className="update-input"
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
@@ -93,12 +78,14 @@ const Update = (_) => {
               <input
                 type="text"
                 placeholder="New description"
+                className="update-input"
                 value={artist}
                 onChange={(e) => {
                   setArtist(e.target.value);
                 }}
               />{" "}
               <button
+                className="update-btn"
                 onClick={() => {
                   updateCreation();
                   refreshPage();
@@ -106,11 +93,7 @@ const Update = (_) => {
               >
                 Update{" "}
               </button>
-              <div>
-                Image update
-                <input type="file" onChange={handleChange} />
-                <button onClick={handleApi}>Submit</button>
-              </div>
+              <SinglePhotoUpdate />
             </div>
           </div>
         </div>
