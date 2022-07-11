@@ -1,5 +1,5 @@
 .update-container {
-  height: 10vh;
+  height: 20vh;
   width: 10vw;
   display: flex;
   justify-content: center;
@@ -11,6 +11,7 @@
   padding: 16px;
   color: green;
   margin: 20px;
+  cursor: pointer;
 }
 
 .update-form {
@@ -20,9 +21,17 @@
 }
 
 .update-input {
-  margin-top: px;
+  margin: 10px;
 }
 
 .update-btn {
+  width: 80px;
+  align-self: center;
   border: none;
+  color: rgb(255, 255, 255);
+  background: rgb(21, 21, 21);
+  box-shadow: 0 0 2em rgb(139, 139, 139);
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
 }

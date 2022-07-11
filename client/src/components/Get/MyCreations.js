@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./myCreations.css";
 import Menu from "../../components/Navbar/Navbar";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 function MyCreations() {
   const [creations, setCreate] = useState([]);
@@ -36,15 +38,19 @@ function MyCreations() {
 
   return (
     <>
+      <Menu />
+      <Header />
+      <div className="get-title-container">
+        <h1>My Creations</h1>
+      </div>
       <div className="get-container">
-        <Menu />
         {creations.map((create, index) => (
           <div className="get-container.img" key={index}>
             <Link to={`/mycreations/creation/${create._id}`} className="link">
               <div className="get-img">
                 <img src={create.img} alt="" className="fpImg" />
                 <div className="get-name">
-                  <span className="creationName">{create.userName}</span>
+                  <span className="creationName">{create.name}</span>
                   <span className="creationDate">
                     {new Date(create.createdAt).toDateString()}
                   </span>
@@ -57,6 +63,7 @@ function MyCreations() {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }

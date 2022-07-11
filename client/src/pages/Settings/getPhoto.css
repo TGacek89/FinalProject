@@ -1,6 +1,6 @@
 .profilePic {
-  width: 204px;
-  height: 204px;
+  width: 162px;
+  height: 162px;
   border-radius: 10px;
   box-shadow: 0 0 0.5em rgb(0, 0, 0);
   object-fit: fill;
@@ -9,8 +9,8 @@
 
 .get-photo-container {
   margin: 10px 0;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border-radius: 10px;
   background-image: url("../../img/user.png");
   background-color: none;
@@ -36,16 +36,22 @@ img[src=""] {
 
 @media screen and (max-width: 480px) {
   .profilePic {
-    width: 110px;
-    height: 110px;
+    width: 82px;
+    height: 82px;
     border-radius: 10px;
 
     box-shadow: 0 0 2em rgb(0, 0, 0);
   }
   .get-photo-container {
-    width: 100x;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -58,7 +64,7 @@ img[src=""] {
     box-shadow: 0 0 2em rgb(0, 0, 0);
   }
   .get-photo-container {
-    margin: 10px;
+    margin: 15px;
     width: 110px;
     height: 110px;
     border-radius: 10px;

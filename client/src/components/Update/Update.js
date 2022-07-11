@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import "./update.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
-import SinglePhotoUpdate from "./Single update/PhotoUpdate";
 
 const Update = (_) => {
   const [create, setCreate] = useState([]);
@@ -93,7 +92,6 @@ const Update = (_) => {
               >
                 Update{" "}
               </button>
-              <SinglePhotoUpdate />
             </div>
           </div>
         </div>

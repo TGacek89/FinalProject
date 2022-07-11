@@ -40,7 +40,7 @@
 }
 
 .create-input-field {
-  width: 720px;
+  width: 200px;
   height: 30px;
   outline: none;
   border: 1px solid black;
@@ -63,8 +63,41 @@
 }
 
 @media screen and (max-width: 480px) {
+  .create-input-field {
+    width: 350px;
+  }
+  .i-form-container {
+    width: 350px;
+  }
+  .create-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .create-input-field {
+    width: 350px;
+  }
+  .i-form-container {
+    width: 350px;
+  }
+  .create-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .create-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+  }
 }
 
 @media only screen and (min-width: 767px) and (max-width: 991px) {

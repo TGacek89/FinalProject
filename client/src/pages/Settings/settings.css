@@ -20,7 +20,7 @@
   margin: 30px;
   padding: 24px;
   width: 30vw;
-  height: 90vh;
+  height: 95vh;
   background: linear-gradient(
     90deg,
     rgba(255, 145, 0, 1) 0%,
@@ -132,7 +132,7 @@
   .settingsWrapper {
     padding: 24px;
     width: 80vw;
-    height: 85vh;
+    height: 95vh;
     background-color: rgba(21, 21, 21, 0.88);
     box-shadow: 0 0 2em rgb(139, 139, 139);
     margin-top: 24px;
@@ -164,7 +164,7 @@
   .settingsWrapper {
     padding: 24px;
     width: 80vw;
-    height: 85vh;
+    height: 95vh;
     background-color: rgba(21, 21, 21, 0.88);
     box-shadow: 0 0 2em rgb(139, 139, 139);
     margin-top: 24px;
@@ -196,7 +196,7 @@
   .settingsWrapper {
     padding: 28px;
     width: 60vw;
-    height: 85vh;
+    height: 95vh;
     background-color: rgba(21, 21, 21, 0.88);
     box-shadow: 0 0 2em rgb(139, 139, 139);
     margin-top: 24px;
@@ -228,7 +228,7 @@
   .settingsWrapper {
     padding: 28px;
     width: 60vw;
-    height: 85vh;
+    height: 95vh;
     background-color: rgba(21, 21, 21, 0.88);
     box-shadow: 0 0 2em rgb(139, 139, 139);
     margin-top: 24px;

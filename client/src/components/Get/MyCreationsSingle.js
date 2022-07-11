@@ -4,10 +4,11 @@ import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Header from "../Header/Header";
 import "./myCreationsSingle.css";
-import Footer from "../Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Update from "../Update/Update";
+import UpdateIcon from "../Update/UpdateIcon";
+import Footer from "../Footer/Footer";
 
 const MyCreationsSingle = (_) => {
   const [create, setCreate] = useState([]);
@@ -64,6 +65,7 @@ const MyCreationsSingle = (_) => {
 
           <div className="column right">
             <div className="my-form">
+              <UpdateIcon />
               <FontAwesomeIcon
                 icon={faTrash}
                 size="2x"
@@ -75,9 +77,8 @@ const MyCreationsSingle = (_) => {
 
             {deleted && <Navigate to="/mycreations" replace={true} />}
           </div>
-
-          {/* <Footer /> */}
         </div>
+        <Footer />
       </div>
     );
   }

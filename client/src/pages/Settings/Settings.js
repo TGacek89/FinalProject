@@ -107,7 +107,7 @@ function Settings() {
                     deleteUser();
                   }}
                 >
-                  <div className="card-body">Delete Account </div>
+                  <div className="card-body">Delete </div>
                 </span>
                 {success && (
                   <span

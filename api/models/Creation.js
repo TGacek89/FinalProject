@@ -4,11 +4,11 @@ const CreationSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      // required: true,
+      required: true,
     },
     author: {
       type: mongoose.Types.ObjectId,
-      // required: true,
+      required: true,
     },
     userName: {
       type: String,
@@ -20,12 +20,12 @@ const CreationSchema = new mongoose.Schema(
     },
     artist: {
       type: String,
-      // required: true,
+      required: true,
     },
 
     img: {
       type: String,
-      // required: true,
+      required: true,
     },
   },
   { timestamps: true }

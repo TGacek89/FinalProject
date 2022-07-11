@@ -14,7 +14,6 @@ const CreateForm = () => {
   const [data, setData] = useState({
     author: JSON.parse(localStorage.getItem("user")) || null,
     userName: user.username,
-    // avatar: user.profilePic[0],
     name: "",
     artist: "",
     img: "",

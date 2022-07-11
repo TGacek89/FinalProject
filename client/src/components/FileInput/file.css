@@ -20,18 +20,11 @@
 
 .file-button {
   display: none;
-  /* outline: none;
-  font-size: 14px;
-  font-weight: bold;
-  background: transparent;
-  padding: 10px;
-  border-radius: 2px;
-  cursor: pointer; */
 }
 
 .file-preview-img {
   width: 720px;
-  height: 450px;
+  height: 430px;
   object-fit: contain;
 }
 
@@ -46,4 +39,40 @@
 .file-check-img {
   width: 60px;
   height: 60px;
+}
+
+@media screen and (max-width: 480px) {
+  .file-container {
+    width: 350px;
+    height: 200px;
+  }
+  .file-preview-img {
+    width: 340px;
+    height: 180px;
+    object-fit: contain;
+  }
+  .file-progress-container {
+    width: 50px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
+  .create-form {
+    width: 40vw;
+    height: 40vh;
+    background: rgb(236, 231, 231);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
