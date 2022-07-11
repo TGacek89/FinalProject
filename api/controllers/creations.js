@@ -54,6 +54,7 @@ export const getCreation = async (req, res) => {
   }
 };
 
+//GET BY USER
 export const getCreationByAuthor = async (req, res) => {
   try {
     const create = await Creation.find({ author: req.params.id });
