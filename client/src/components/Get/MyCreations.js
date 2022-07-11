@@ -8,7 +8,6 @@ import Footer from "../../components/Footer/Footer";
 
 function MyCreations() {
   const [creations, setCreate] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [data, setData] = useState({
     title: "",
     artist: "",
@@ -24,6 +23,7 @@ function MyCreations() {
       );
       console.log(data);
       setCreate(data.data);
+      setData(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -31,9 +31,6 @@ function MyCreations() {
 
   useEffect(() => {
     getAllCreations();
-    setTimeout(() => {
-      setLoading(false);
-    }, 500);
   }, []);
 
   return (
@@ -56,6 +53,7 @@ function MyCreations() {
                   </span>
                   <div className="creationArtist">
                     <span>{create.artist}</span>
+                    <span>{data.artist}</span>
                   </div>
                 </div>
               </div>

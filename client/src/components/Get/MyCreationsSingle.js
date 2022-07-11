@@ -33,7 +33,7 @@ const MyCreationsSingle = (_) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  });
+  }, []);
   useEffect(() => {}, [deleted, create]);
 
   //DELETE POST

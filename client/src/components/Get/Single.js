@@ -28,7 +28,7 @@ const Single = (_) => {
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  });
+  }, []);
   useEffect(() => {}, [create]);
 
   if (loading) {
@@ -42,8 +42,8 @@ const Single = (_) => {
           <div>
             <img className="single-img" src={create.img} alt="" />
           </div>
-          <div className="single-title">{create.name}</div>
-          <div className="single-artist">{create.artist}</div>
+          <div className="single-title">Title: {create.name}</div>
+          <div className="single-artist">Description: {create.artist}</div>
         </div>
         <Footer />
       </div>

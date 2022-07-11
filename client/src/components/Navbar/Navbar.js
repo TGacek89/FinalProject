@@ -72,7 +72,10 @@ export default function Navbar() {
               >
                 <li className="items">MY CREATIONS</li>
               </Link>
-              <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+              <Link
+                to="/login"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 <li className="items" onClick={() => dispatch(logout())}>
                   Logout{" "}
                 </li>

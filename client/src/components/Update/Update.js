@@ -24,10 +24,6 @@ const Update = (_) => {
     }
   };
 
-  const refreshPage = async () => {
-    window.location.reload(false);
-  };
-
   useEffect(() => {
     getAllCreations();
   });
@@ -87,7 +83,6 @@ const Update = (_) => {
                 className="update-btn"
                 onClick={() => {
                   updateCreation();
-                  refreshPage();
                 }}
               >
                 Update{" "}

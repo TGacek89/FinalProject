@@ -11,9 +11,9 @@ const SinglePhotoUpdate = () => {
     img: "",
   });
 
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
+  // const handleChange = ({ currentTarget: input }) => {
+  //   setData({ ...data, [input.name]: input.value });
+  // };
 
   const handleInputState = (name, value) => {
     setData((prev) => ({ ...prev, [name]: value }));

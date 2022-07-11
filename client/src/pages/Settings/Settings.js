@@ -43,9 +43,7 @@ function Settings() {
       if (res.statusText === "OK") {
         setSuccess(true);
       }
-      // dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
-      // dispatch({ type: "UPDATE_FAILURE" });
       setError(err);
       console.log(error);
     }

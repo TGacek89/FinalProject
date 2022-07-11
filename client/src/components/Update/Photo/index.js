@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import storage from "../../../firebase";
-import check from "../../../check.png";
+import check from "../../../img/check.png";
 import "./file.css";
 
 const PhotoInput = ({
