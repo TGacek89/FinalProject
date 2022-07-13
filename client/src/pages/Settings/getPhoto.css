@@ -1,6 +1,6 @@
 .profilePic {
-  width: 162px;
-  height: 162px;
+  width: 142px;
+  height: 142px;
   border-radius: 10px;
   box-shadow: 0 0 0.5em rgb(0, 0, 0);
   object-fit: fill;
@@ -9,8 +9,8 @@
 
 .get-photo-container {
   margin: 10px 0;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 10px;
   background-image: url("../../img/user.png");
   background-color: none;
