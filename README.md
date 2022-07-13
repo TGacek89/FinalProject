@@ -1,6 +1,6 @@
 # FinalProject
 
-Photo Bog, tu portal de búsqueda de centros de buceo alrededor del mundo
+Photo Blog, tu portal de búsqueda de centros de buceo alrededor del mundo
 Este proyecto ha sido creado con Create React App.
 
 Instrucciones de instalación
